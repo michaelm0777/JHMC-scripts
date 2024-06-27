@@ -66,9 +66,11 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + "/public"));
 
 app.get("/", (req, res) => {
-  res.render("pages/home.ejs");
+  res.render("pages/newlanding.ejs");
 });
-
+app.get("/home", (req, res) => {
+  res.render("pages/newhome[working].ejs");
+});
 app.get("/homeworking", (req, res) => {
   res.render("pages/newhome[working].ejs");
 });
