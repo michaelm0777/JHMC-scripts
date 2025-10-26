@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import AirtablePlus from 'airtable-plus';
-import { apiKey, baseID } from '../../secrets.js';
+// import { apiKey, baseID } from '../../secrets.js';
 var markdownpdf = require("markdown-pdf")
 const shell = require('shelljs');
 

@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%- include('../partials/meta'); %>
+
+  <title><%= chapter.title %> | JHMC Textbook</title>
+  <meta name="description" content="<%= chapter.description %>">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link href="/css/one-page-wonder.css" rel="stylesheet">
+  
+  <!-- MathJax for LaTeX rendering -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      }
+    };
+  </script>
+  
+  <style>
+    /* Reset padding-top from one-page-wonder.css and handle navbar spacing */
+    body {
+      padding-top: 0 !important;
+      font-family: "Lato", sans-serif;
+      background-color: var(--paper);
+      color: var(--ink);
+    }
+    
+    .main-content {
+      margin-top: 80px; /* Space for fixed navbar */
+    }
+    
+    .sidebar {
+      position: fixed;
+      top: 56px; /* Standard navbar height */
+      left: 0;
+      bottom: 0;
+      width: 280px;
+      background: var(--paper);
+      border-right: 2px solid var(--deepwater);
+      overflow-y: auto;
+      z-index: 100;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+      padding-bottom: 200px; /* Space for footer */
+    }
+    
+    .content-area {
+      margin-left: 280px;
+      padding: 30px 50px;
+      padding-top: 100px; /* Space for navbar */
+      min-height: 100vh;
+      max-width: 100%;
+      background: var(--paper);
+    }
+    
+    .content-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .chapter-nav {
+      padding: 20px;
+    }
+    
+    .chapter-nav h5 {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 800 !important;
+      color: var(--imsa-blue);
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--imsa-light-blue);
+    }
+    
+    .section-link {
+      display: block;
+      padding: 10px 15px;
+      color: var(--pencil-lead);
+      text-decoration: none;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      transition: all 0.3s;
+      font-size: 0.95rem;
+      border-left: 3px solid transparent;
+    }
+    
+    .section-link:hover {
+      background: var(--water);
+      color: var(--imsa-blue);
+      text-decoration: none;
+      border-left-color: var(--imsa-light-blue);
+      transform: translateX(3px);
+    }
+    
+    .section-link.active {
+      background: var(--imsa-light-blue);
+      color: var(--imsa-blue);
+      font-weight: 600;
+      border-left-color: var(--imsa-blue);
+      box-shadow: 0 2px 8px rgba(0,180,223,0.3);
+    }
+    
+    .subsection-link {
+      padding-left: 25px;
+      font-size: 0.9em;
+    }
+    
+    .exercise-section, .solution-section {
+      background: var(--water);
+      border-left: 4px solid var(--imsa-light-blue);
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    
+    .exercise-section h4, .solution-section h4 {
+      color: var(--imsa-blue);
+      margin-bottom: 15px;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+    }
+    
+    .exercise-section ol, .solution-section ol {
+      counter-reset: item;
+      padding-left: 0;
+    }
+    
+    .exercise-section ol li, .solution-section ol li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      counter-increment: item;
+    }
+    
+    .exercise-section ol li::before, .solution-section ol li::before {
+      content: counter(item) ".";
+      font-weight: bold;
+      margin-right: 10px;
+      min-width: 25px;
+    }
+    
+    .exercise-item {
+      margin-bottom: 20px;
+      padding: 20px;
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .exercise-item .exercise-question {
+      margin-bottom: 15px;
+      font-size: 1.05rem;
+    }
+    
+    .exercise-input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .exercise-buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .check-answer-btn, .show-solution-btn {
+      margin: 0;
+    }
+    
+    .solution-box {
+      display: none;
+      background: #e7f3ff;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 4px;
+    }
+    
+    .solution-box.show {
+      display: block;
+    }
+    
+    .feedback {
+      margin-top: 10px;
+      padding: 12px;
+      border-radius: 4px;
+      display: none;
+      font-weight: 500;
+    }
+    
+    .feedback.show {
+      display: block;
+    }
+    
+    .feedback.correct {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .feedback.incorrect {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    
+    .feedback.hint {
+      background: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeeba;
+    }
+    
+    .toggle-sidebar-btn {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 10px;
+      z-index: 1000;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding-top: 60px;
+      }
+      
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+        top: 60px;
+        height: calc(100vh - 60px);
+        width: 250px;
+      }
+      
+      .sidebar.show {
+        transform: translateX(0);
+      }
+      
+      .content-area {
+        margin-left: 0;
+        padding: 20px;
+      }
+      
+      .toggle-sidebar-btn {
+        display: block;
+        top: 70px;
+      }
+    }
+    
+    .progress-indicator {
+      background: var(--water);
+      height: 6px;
+      margin-bottom: 20px;
+      border-radius: 3px;
+    }
+    
+    .progress-bar {
+      background: var(--imsa-light-blue);
+      height: 100%;
+      transition: width 0.3s;
+      border-radius: 3px;
+    }
+    
+    #chapterContent h1 {
+      color: var(--imsa-blue);
+      font-family: "Open Sans", sans-serif;
+      font-weight: 800 !important;
+      margin-bottom: 30px;
+      border-bottom: 3px solid var(--imsa-light-blue);
+      padding-bottom: 15px;
+    }
+    
+    #chapterContent h2 {
+      color: var(--imsa-blue);
+      font-family: "Open Sans", sans-serif;
+      font-weight: 800 !important;
+      margin-top: 40px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--deepwater);
+    }
+    
+    #chapterContent h3 {
+      color: var(--pencil-lead);
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+      margin-top: 30px;
+    }
+    
+    #chapterContent p {
+      line-height: 1.8;
+      color: var(--ink);
+      font-family: "Lato", sans-serif;
+      font-size: 1.05rem;
+    }
+    
+    #chapterContent ol, #chapterContent ul {
+      font-family: "Lato", sans-serif;
+      color: var(--ink);
+    }
+    
+    /* Exercise and Solution Sections */
+    .exercise-section, .solution-section {
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      margin: 30px 0;
+      padding: 25px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .exercise-section h3, .solution-section h3 {
+      color: var(--imsa-blue);
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--imsa-light-blue);
+    }
+    
+    .exercise-section {
+      background: linear-gradient(135deg, #fff8f0 0%, #f8f9fa 100%);
+      border-left: 4px solid #ffc107;
+    }
+    
+    .solution-section {
+      background: linear-gradient(135deg, #f0f8f0 0%, #f8f9fa 100%);
+      border-left: 4px solid #28a745;
+    }
+    
+    /* Mathematical content styling */
+    .boxed-answer {
+      background: var(--imsa-light-blue);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      font-family: "Courier New", monospace;
+    }
+    
+    /* Better paragraph spacing in chapter content */
+    .chapter-content p {
+      margin-bottom: 1.2em;
+      line-height: 1.7;
+      text-align: justify;
+    }
+    
+    /* Section spacing */
+    .chapter-content h2 {
+      margin-top: 50px;
+      margin-bottom: 25px;
+      clear: both;
+    }
+    
+    .chapter-content h3 {
+      margin-top: 35px;
+      margin-bottom: 20px;
+    }
+    
+    /* List styling within exercises */
+    .exercise-section ol {
+      counter-reset: exercise-counter;
+    }
+    
+    .exercise-section ol li {
+      counter-increment: exercise-counter;
+      margin-bottom: 15px;
+      padding-left: 10px;
+    }
+    
+    .solution-section ol li {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: white;
+      border-radius: 6px;
+      border-left: 3px solid #28a745;
+    }
+    
+    /* Exercise items styling */
+    .exercise-item {
+      background: white;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+      padding: 15px;
+      margin: 10px 0;
+      font-family: "Lato", sans-serif;
+      border-left: 3px solid #ffc107;
+    }
+    
+    /* Math line styling */
+    .math-line {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 1.1em;
+    }
+    
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #e9ecef;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <%- include('../partials/navbar') %>
+
+  <!-- Main container wrapper -->
+  <div class="main-content">
+    <!-- Toggle Sidebar Button (Mobile) -->
+    <button class="btn btn-light toggle-sidebar-btn" onclick="toggleSidebar()">
+      <span style="font-size: 1.2em;">☰</span> Menu
+    </button>
+
+  <!-- Sidebar Navigation -->
+  <div class="sidebar" id="sidebar">
+    <div class="chapter-nav">
+      <h5><%= chapter.title %></h5>
+      <% if (chapter.sections && chapter.sections.length > 0) { %>
+        <% chapter.sections.forEach(function(section) { %>
+          <a href="#<%= section.id %>" class="section-link" onclick="scrollToSection('<%= section.id %>')">
+            <%= section.title %>
+          </a>
+          <% if (section.subsections) { %>
+            <% section.subsections.forEach(function(subsection) { %>
+              <a href="#<%= section.id %>-<%= subsection.toLowerCase().replace(/\s+/g, '-') %>" 
+                 class="section-link subsection-link" onclick="scrollToSection('<%= section.id %>-<%= subsection.toLowerCase().replace(/\s+/g, '-') %>')">
+                <%= subsection %>
+              </a>
+            <% }); %>
+          <% } %>
+        <% }); %>
+      <% } %>
+      
+      <hr>
+      <h6 class="mt-3">Other Chapters</h6>
+      <a href="/textbook/algebra" class="section-link <%= chapter.id === 'algebra' ? 'active' : '' %>">Algebra</a>
+      <a href="/textbook/geometry" class="section-link <%= chapter.id === 'geometry' ? 'active' : '' %>">Geometry</a>
+      <a href="/textbook/number-theory" class="section-link <%= chapter.id === 'number-theory' ? 'active' : '' %>">Number Theory</a>
+      <a href="/textbook/combo" class="section-link <%= chapter.id === 'combo' ? 'active' : '' %>">Combinatorics</a>
+    </div>
+  </div>
+
+    <!-- Main Content Area -->
+    <div class="content-area">
+    <div class="content-wrapper">
+      <!-- Chapter Title -->
+      <h1 class="mb-5"><%= chapter.title %></h1>
+      
+      <!-- Chapter HTML will be loaded dynamically from the generated HTML file -->
+      <div id="chapterContent" class="chapter-html">Loading chapter…</div>
+      </div>
+      
+      <!-- Navigation Buttons -->
+      <div class="nav-buttons">
+        <button class="btn btn-imsa btn-lg" onclick="previousSection()">← Previous Section</button>
+        <button class="btn btn-imsa btn-lg" onclick="nextSection()">Next Section →</button>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Interactive Features -->
+  <script>
+    let currentSection = 0;
+    let exercises = {};
+    // Load the generated chapter HTML (written to public/textbook/html/<chapterFile>)
+    (function loadChapterHtml() {
+      const chapterId = '<%= chapter.id %>';
+      const url = '/textbook/html/' + chapterId + '.ejs';
+      console.log('Loading chapter from:', url);
+      
+      fetch(url)
+        .then(res => {
+          if (!res.ok) {
+            throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+          }
+          return res.text();
+        })
+        .then(html => {
+          const container = document.getElementById('chapterContent');
+          container.innerHTML = html;
+          console.log('Chapter content loaded successfully');
+          
+          // Process exercises after loading content
+          processExercises();
+          
+          // Add section IDs for navigation
+          addSectionIds();
+          
+          // Re-run MathJax on loaded content
+          if (window.MathJax && window.MathJax.typesetPromise) {
+            window.MathJax.typesetPromise([container]).catch((err) => {
+              console.error('MathJax error:', err);
+            });
+          }
+        })
+        .catch(err => {
+          console.error('Error loading chapter:', err);
+          document.getElementById('chapterContent').innerHTML = `
+            <div class="alert alert-danger">
+              <h4>Content Loading Error</h4>
+              <p>Unable to load the chapter content. Please ensure the file exists at: <code>${url}</code></p>
+              <p><strong>Error details:</strong> ${err.message}</p>
+              <p><strong>Chapter ID:</strong> ${chapterId}</p>
+            </div>
+          `;
+        });
+    })();
+
+    function scrollToSection(id) {
+      const container = document.getElementById('chapterContent');
+      if (!container) return;
+      // Try to find anchor inside loaded chapter
+      const target = container.querySelector('#' + id) || container.querySelector('[name="' + id + '"]');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        // If not found, jump to top of chapter
+        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function previousSection() {
+      // find all sections in sidebar and move focus
+      const links = Array.from(document.querySelectorAll('.chapter-nav .section-link'));
+      if (!links.length) return;
+      const activeIndex = links.findIndex(a => a.classList.contains('active'));
+      const nextIndex = Math.max(0, (activeIndex === -1 ? 0 : activeIndex) - 1);
+      links[nextIndex].click();
+    }
+
+    function nextSection() {
+      const links = Array.from(document.querySelectorAll('.chapter-nav .section-link'));
+      if (!links.length) return;
+      const activeIndex = links.findIndex(a => a.classList.contains('active'));
+      const nextIndex = Math.min(links.length - 1, (activeIndex === -1 ? 0 : activeIndex) + 1);
+      links[nextIndex].click();
+    }
+    let userAnswers = {};
+    
+    // Correct answers will be extracted from the solution sections
+    const correctAnswers = {};
+    
+    // Adjust sidebar height to avoid footer
+    function adjustSidebarHeight() {
+      const footer = document.querySelector('footer');
+      const sidebar = document.getElementById('sidebar');
+      
+      if (footer && sidebar) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const footerHeight = footer.offsetHeight;
+              sidebar.style.height = `calc(100vh - 56px - ${footerHeight}px)`;
+            } else {
+              sidebar.style.height = 'calc(100vh - 56px)';
+            }
+          });
+        });
+        
+        observer.observe(footer);
+      }
+      
+      // Also adjust on scroll
+      window.addEventListener('scroll', function() {
+        const footer = document.querySelector('footer');
+        const sidebar = document.getElementById('sidebar');
+        if (footer && sidebar) {
+          const footerRect = footer.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+          
+          if (footerRect.top < windowHeight) {
+            const overlap = windowHeight - footerRect.top;
+            sidebar.style.height = `calc(100vh - 56px - ${overlap}px)`;
+          } else {
+            sidebar.style.height = 'calc(100vh - 56px)';
+          }
+        }
+      });
+    }
+    
+    // Initialize on page load
+    window.addEventListener('DOMContentLoaded', function() {
+      adjustSidebarHeight();
+      updateProgress();
+    });
+    
+    function processExercises() {
+      // Find all exercise sections and make them interactive
+      const exerciseSections = document.querySelectorAll('.exercise-section');
+      
+      exerciseSections.forEach((section, sectionIndex) => {
+        const exerciseItems = section.querySelectorAll('ol li');
+        
+        exerciseItems.forEach((item, itemIndex) => {
+          const exerciseId = `exercise-${sectionIndex}-${itemIndex}`;
+          const exerciseText = item.innerHTML;
+          
+          // Create interactive exercise element
+          const exerciseDiv = document.createElement('div');
+          exerciseDiv.className = 'exercise-item';
+          exerciseDiv.innerHTML = `
+            <div class="exercise-question">${exerciseText}</div>
+            <input type="text" class="exercise-input" id="${exerciseId}-input" 
+                   placeholder="Enter your answer here...">
+            <div class="exercise-buttons">
+              <button class="btn btn-sm btn-primary check-answer-btn" 
+                      onclick="checkAnswer('${exerciseId}')">Check Answer</button>
+              <button class="btn btn-sm btn-outline-secondary show-solution-btn" 
+                      onclick="showSolution('${exerciseId}')">Show Solution</button>
+            </div>
+            <div id="${exerciseId}-feedback" class="feedback"></div>
+            <div id="${exerciseId}-solution" class="solution-box"></div>
+          `;
+          
+          item.parentNode.replaceChild(exerciseDiv, item);
+        });
+      });
+      
+      // Process solutions and extract answers
+      const solutionSections = document.querySelectorAll('.solution-section');
+      console.log(`Found ${solutionSections.length} solution sections`);
+      
+      solutionSections.forEach((section, sectionIndex) => {
+        const solutionItems = section.querySelectorAll('ol li');
+        console.log(`Solution section ${sectionIndex} has ${solutionItems.length} items`);
+        
+        solutionItems.forEach((item, itemIndex) => {
+          const exerciseId = `exercise-${sectionIndex}-${itemIndex}`;
+          const solutionHtml = item.innerHTML;
+          
+          console.log(`Processing ${exerciseId}, solution HTML:`, solutionHtml.substring(0, 100));
+          
+          // Try multiple patterns to extract the answer
+          let extractedAnswer = null;
+          
+          // Pattern 1: \boxed{answer}
+          let boxedMatch = solutionHtml.match(/\\boxed\{([^}]+)\}/);
+          if (boxedMatch) {
+            extractedAnswer = boxedMatch[1].trim();
+            console.log(`✓ Extracted answer for ${exerciseId} using \\boxed: "${extractedAnswer}"`);
+          }
+          
+          // Pattern 2: $\boxed{answer}$
+          if (!extractedAnswer) {
+            boxedMatch = solutionHtml.match(/\$\\boxed\{([^}]+)\}\$/);
+            if (boxedMatch) {
+              extractedAnswer = boxedMatch[1].trim();
+              console.log(`✓ Extracted answer for ${exerciseId} using $\\boxed: "${extractedAnswer}"`);
+            }
+          }
+          
+          // Pattern 3: <span class="boxed">answer</span>
+          if (!extractedAnswer) {
+            const spanMatch = solutionHtml.match(/<span class="boxed">\$?([^<]+)\$?<\/span>/);
+            if (spanMatch) {
+              extractedAnswer = spanMatch[1].trim();
+              console.log(`✓ Extracted answer for ${exerciseId} using span.boxed: "${extractedAnswer}"`);
+            }
+          }
+          
+          if (!extractedAnswer) {
+            console.log(`✗ No answer found for ${exerciseId}`);
+          }
+          
+          exercises[exerciseId] = {
+            solution: solutionHtml,
+            answer: extractedAnswer
+          };
+          
+          // Store in correctAnswers if we found one
+          if (extractedAnswer) {
+            correctAnswers[exerciseId] = extractedAnswer;
+          }
+        });
+        
+        // Hide original solution sections
+        section.style.display = 'none';
+      });
+      
+      console.log('Processed exercises:', Object.keys(exercises).length);
+      console.log('Found answers for:', Object.keys(correctAnswers).length, 'exercises');
+      console.log('correctAnswers object:', correctAnswers);
+    }
+    
+    function addSectionIds() {
+      // Add IDs to h2 and h3 elements for navigation
+      const headers = document.querySelectorAll('#chapterContent h2, #chapterContent h3');
+      headers.forEach(header => {
+        if (!header.id) {
+          const text = header.textContent;
+          const id = text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+          header.id = id;
+        }
+      });
+      
+      // Dynamically populate sidebar with h2 sections
+      populateSidebarFromContent();
+    }
+    
+    function populateSidebarFromContent() {
+      // Get all h2 headers from the loaded content
+      const h2Headers = document.querySelectorAll('#chapterContent h2');
+      
+      if (h2Headers.length === 0) return;
+      
+      // Find the sidebar navigation container
+      const sidebarNav = document.querySelector('.chapter-nav');
+      if (!sidebarNav) return;
+      
+      // Get the chapter title element
+      const chapterTitle = sidebarNav.querySelector('h5');
+      
+      // Remove old section links (but keep chapter title and "Other Chapters" section)
+      const oldLinks = sidebarNav.querySelectorAll('.section-link:not([href^="/textbook/"])');
+      oldLinks.forEach(link => link.remove());
+      
+      // Create new section links from h2 headers
+      const fragment = document.createDocumentFragment();
+      h2Headers.forEach((header, index) => {
+        const link = document.createElement('a');
+        link.href = '#' + header.id;
+        link.className = 'section-link';
+        link.textContent = header.textContent;
+        link.onclick = function(e) {
+          e.preventDefault();
+          scrollToSection(header.id);
+        };
+        
+        // Make first section active by default
+        if (index === 0) {
+          link.classList.add('active');
+        }
+        
+        fragment.appendChild(link);
+      });
+      
+      // Insert the new links after the chapter title but before the hr
+      const hr = sidebarNav.querySelector('hr');
+      if (hr && chapterTitle) {
+        chapterTitle.after(fragment);
+      }
+    }
+    
+    function checkAnswer(exerciseId) {
+      const input = document.getElementById(`${exerciseId}-input`);
+      const feedback = document.getElementById(`${exerciseId}-feedback`);
+      const userAnswer = input.value.trim();
+      
+      if (!userAnswer) {
+        feedback.className = 'feedback hint show';
+        feedback.innerHTML = '⚠️ Please enter an answer.';
+        return;
+      }
+      
+      // Store user answer
+      userAnswers[exerciseId] = userAnswer;
+      
+      // Check against correct answers
+      const correct = correctAnswers[exerciseId];
+      if (correct) {
+        const isCorrect = compareAnswers(userAnswer, correct);
+        
+        if (isCorrect) {
+          feedback.className = 'feedback correct show';
+          feedback.innerHTML = '✅ Correct! Well done!';
+        } else {
+          feedback.className = 'feedback incorrect show';
+          feedback.innerHTML = `❌ Not quite. Try again or click "Show Solution" to see the detailed solution.`;
+        }
+      } else {
+        // No answer key available
+        feedback.className = 'feedback hint show';
+        feedback.innerHTML = `Your answer has been recorded. Click "Show Solution" to see the detailed solution and check your work.`;
+      }
+      
+      updateProgress();
+    }
+    
+    function compareAnswers(userAnswer, correctAnswer) {
+      // Normalize both answers for comparison
+      const normalizeAnswer = (ans) => {
+        return ans.toLowerCase()
+          .replace(/\s+/g, '')           // Remove all whitespace
+          .replace(/\$/g, '')             // Remove $ signs
+          .replace(/\\text\{([^}]+)\}/g, '$1')  // Extract text from \text{}
+          .replace(/\\boxed\{([^}]+)\}/g, '$1') // Extract from \boxed{}
+          .replace(/[()]/g, '')           // Remove parentheses
+          .replace(/,/g, '')              // Remove commas
+          .trim();
+      };
+      
+      const normalizedUser = normalizeAnswer(userAnswer);
+      const normalizedCorrect = normalizeAnswer(correctAnswer);
+      
+      // Direct match
+      if (normalizedUser === normalizedCorrect) {
+        return true;
+      }
+      
+      // Check if correct answer has multiple acceptable answers separated by |
+      const possibleAnswers = correctAnswer.split('|').map(ans => normalizeAnswer(ans));
+      if (possibleAnswers.some(ans => ans === normalizedUser)) {
+        return true;
+      }
+      
+      // Try numeric comparison for number answers
+      const userNum = parseFloat(normalizedUser);
+      const correctNum = parseFloat(normalizedCorrect);
+      if (!isNaN(userNum) && !isNaN(correctNum)) {
+        return Math.abs(userNum - correctNum) < 0.0001;
+      }
+      
+      // Check for common variations
+      const variations = {
+        'infinity': ['inf', '∞', 'infinite', 'infinitelymany'],
+        'nosolutions': ['0', 'none', 'nosolution'],
+        'allrealnumbers': ['allreals', 'r', 'reals'],
+      };
+      
+      for (const [key, vals] of Object.entries(variations)) {
+        if (normalizedCorrect.includes(key) || vals.includes(normalizedCorrect)) {
+          if (vals.includes(normalizedUser) || normalizedUser.includes(key)) {
+            return true;
+          }
+        }
+      }
+      
+      return false;
+    }
+    
+    function showSolution(exerciseId) {
+      const solutionBox = document.getElementById(`${exerciseId}-solution`);
+      const exercise = exercises[exerciseId];
+      
+      if (exercise && exercise.solution) {
+        solutionBox.innerHTML = `<strong>Solution:</strong><br>${exercise.solution}`;
+        solutionBox.classList.add('show');
+        
+        // Re-render MathJax in solution
+        MathJax.typesetPromise([solutionBox]);
+      }
+    }
+    
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        // Scroll with offset for fixed navbar
+        const yOffset = -100;
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+        
+        // Update active link
+        document.querySelectorAll('.section-link').forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + sectionId) {
+            link.classList.add('active');
+          }
+        });
+        
+        // Update current section for navigation buttons
+        const sections = document.querySelectorAll('#chapterContent h2');
+        sections.forEach((section, index) => {
+          if (section.id === sectionId) {
+            currentSection = index;
+          }
+        });
+      }
+    }
+    
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('show');
+    }
+    
+    function updateProgress() {
+      // Calculate progress based on exercises attempted
+      const totalExercises = Object.keys(exercises).length;
+      const attemptedExercises = Object.keys(userAnswers).length;
+      
+      if (totalExercises > 0) {
+        const progress = (attemptedExercises / totalExercises) * 100;
+        document.getElementById('progressBar').style.width = progress + '%';
+      }
+    }
+    
+    function nextSection() {
+      const sections = document.querySelectorAll('#chapterContent h2');
+      if (currentSection < sections.length - 1) {
+        currentSection++;
+        sections[currentSection].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    
+    function previousSection() {
+      const sections = document.querySelectorAll('#chapterContent h2');
+      if (currentSection > 0) {
+        currentSection--;
+        sections[currentSection].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    
+    // Track scroll position for active section highlighting
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('#chapterContent h2, #chapterContent h3');
+      const sidebarLinks = document.querySelectorAll('.section-link');
+      
+      let currentActive = null;
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 100 && rect.top > -100) {
+          currentActive = section.id;
+        }
+      });
+      
+      if (currentActive) {
+        sidebarLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + currentActive) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  </script>
+
+  <!-- Footer -->
+  <%- include('../partials/footer') %>
+  
+</body>
+
+</html>

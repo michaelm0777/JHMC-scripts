@@ -1,8 +1,8 @@
 const AirtablePlus = require('airtable-plus');
 const DotEnv = require('dotenv').config();
-const { apiKey, baseID, sampleTestId, masterTestId } = require('./secrets.js');
+// const { apiKey, baseID, sampleTestId, masterTestId } = require('./secrets.js');
 
-const competitionsTable = new AirtablePlus({ tableName: "Competitions", apiKey, baseID });
+// const competitionsTable = new AirtablePlus({ tableName: "Competitions", apiKey, baseID });
 
 const getQuestions = async (competitionCode) => {
     competitionCode = competitionCode.toUpperCase();

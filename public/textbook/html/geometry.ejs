@@ -1,0 +1,673 @@
+<div class="toc">
+
+<h2 id="intro">Introduction</h2>
+<p>Geometry studies the properties of shapes, figures, and spaces. This book will focus on Euclidean and coordinate geometry. Euclidean geometry, in a simple sense, deals with shapes such as triangles, circles, and polygons. There are also extensions to three-dimensional systems using the same principles found in 2D geometry.</p>
+
+<h2 id="angles">Chapter 1: Angles</h2>
+
+<h3 id="parallel-lines">Parallel Lines</h3>
+<p>When parallel lines are crossed by a transversal, the angles created have special properties.</p>
+
+<div class="text-center my-3">
+  <img src="/textbook/html/geo_figs/geo_fig1.png" alt="Parallel lines cut by a transversal" class="img-fluid" style="max-width: 500px;">
+<figcaption>Figure 1: Parallel lines cut by a transversal showing corresponding angles</figcaption>
+
+</div>
+
+<div class="theorem">
+<strong>Theorem:</strong>
+<p>If two parallel lines are cut by a transversal, then each pair of corresponding angles is congruent.</p>
+</div>
+
+<p>Using vertical angles, the relationships can be written as:</p>
+$\angle 5 = \angle 8 = \angle 1 = \angle 4,$
+$\angle 6 = \angle 7 = \angle 2 = \angle 3.$
+
+<p>If any two of these angle equalities can be shown, the lines must be parallel.</p>
+
+<h3 id="angles-in-triangle">Angles in a Triangle</h3>
+
+<div class="theorem">
+<strong>Theorem:</strong>
+<p>The sum of the interior angles of any triangle is $180^\circ$.</p>
+</div>
+
+<div class="exercise-section">
+<h4>Exercise</h4>
+<p>Draw a triangle, extend one side, and construct a line parallel to the base through the opposite vertex.</p>
+<p>Use the parallel lines theorems to prove that the three interior angles sum to $180^\circ$.</p>
+</div>
+
+<h3 id="exterior-angles">Exterior Angles</h3>
+
+<div class="definition">
+<strong>Definition:</strong>
+<p>When a side of a triangle is extended, the angle created outside the triangle is called an <em>exterior angle</em>.</p>
+</div>
+
+<p>Using the angle sum of a triangle, we can find a relationship between the exterior angles and the interior angles of a triangle.</p>
+
+<div class="theorem">
+<strong>Theorem:</strong>
+<p>An exterior angle of a triangle is equal to the sum of the two non-adjacent interior angles:</p>
+$\angle \text{Exterior} = \angle \text{Interior}_1 + \angle \text{Interior}_2.$
+</div>
+
+<div class="exercise-section">
+<h4>Exercise</h4>
+<p>In a triangle with interior angles $50^\circ$ and $60^\circ$, find the measure of the exterior angle adjacent to the remaining angle.</p>
+</div>
+
+<h3 id="intersecting-lines">Intersecting Lines</h3>
+
+<div class="definition">
+<strong>Definition:</strong>
+<p>When two lines intersect, they form four angles. The opposite (or "vertical") angles are congruent, and adjacent angles are supplementary.</p>
+</div>
+
+<p><strong>Example:</strong> If two lines intersect and one of the angles measures $40^\circ$, then its vertical angle also measures $40^\circ$. The two adjacent angles each measure $140^\circ$ since they are supplementary to $40^\circ$.</p>
+
+<h2 id="triangles">Chapter 2: Triangles</h2>
+
+<h3 id="congruency">Congruency</h3>
+
+<div class="definition">
+<strong>Definition:</strong>
+<ul>
+    <li><strong>SSS (Side–Side–Side):</strong> If all three side lengths of one triangle are congruent to another triangle, then the triangles are congruent.</li>
+    <li><strong>SAS (Side–Angle–Side):</strong> If two sides and the included angle of one triangle are congruent to two sides and the included angle of another triangle, then the triangles are congruent.</li>
+    <li><strong>ASA / AAS:</strong> If a side and two angles are congruent, the triangles are congruent. <em>Note:</em> The ambiguous case occurs if the known angle is not between the two sides.</li>
+</ul>
+</div>
+
+<h3 id="similarity">Similarity</h3>
+
+<div class="definition">
+<strong>Definition:</strong>
+<ul>
+    <li><strong>AA (Angle–Angle):</strong> Two triangles with all corresponding angles congruent are similar.</li>
+    <li><strong>SSS (Side–Side–Side in proportion):</strong> Two triangles are similar if their corresponding sides are in proportion.</li>
+</ul>
+</div>
+
+<h3 id="right-triangles">Right Triangles</h3>
+
+<div class="text-center my-3">
+  <img src="/textbook/html/geo_figs/geo_fig2.png" alt="A geometric proof of the Pythagorean theorem." class="img-fluid" style="max-width: 500px;">
+<figcaption>Figure 2: A geometric proof of the Pythagorean Theorem.</figcaption>
+
+</div>
+
+<div class="theorem">
+<strong>Theorem (Pythagorean Theorem):</strong>
+<p>In a right triangle with legs of lengths $a$ and $b$ and hypotenuse length $c$,</p>
+$a^2 + b^2 = c^2.$
+</div>
+
+<p><strong>30–60–90 Triangle:</strong> In a right triangle with angles $30^\circ, 60^\circ, 90^\circ$, the sides have fixed ratios:</p>
+$s, \quad \tfrac{s\sqrt{3}}{2}, \quad 2s.$
+
+<div class="text-center">
+  <img src="/textbook/html/geo_figs/geo_fig4.png" alt="" class="img-fluid" style="max-width: 500px;">
+<figcaption>Figure 3: 30-60-90 Triangle.</figcaption>
+
+</div>
+
+<p><strong>45–45–90 Triangle:</strong> In a right isosceles triangle with angles $45^\circ, 45^\circ, 90^\circ$, the sides satisfy:</p>
+$s, \quad s, \quad s\sqrt{2}.$
+
+<div class="text-center">
+  <img src="/textbook/html/geo_figs/geo_fig5.png" alt="" class="img-fluid" style="max-width: 500px;">
+<figcaption>Figure 4: 45-45-90 Triangle.</figcaption>
+
+</div>
+
+<div class="definition">
+<strong>Pythagorean Triples:</strong>
+<p>Positive integer triples $(a,b,c)$ such that $a^2+b^2=c^2$. They represent the integer side lengths of right triangles.</p>
+<p><em>Example:</em> $(3,4,5)$ or $(5,12,13)$.</p>
+<p>Multiplying a triple by a scale factor produces another valid triple.</p>
+</div>
+
+<div class="text-center">
+  <img src="/textbook/html/geo_figs/geo_fig3.png" alt="" class="img-fluid" style="max-width: 500px;">
+<figcaption>Figure 5: A table of small pythagorean triples.</figcaption>
+
+</div>
+
+<h2 id="perimeter-area">Chapter 3: Perimeter & Area</h2>
+
+<h3 id="perimeter">Perimeter</h3>
+
+<div class="definition">
+<strong>Definition:</strong>
+<p>The perimeter of a polygon is defined as the total sum of the lengths of its sides.</p>
+</div>
+
+<h3 id="area">Area</h3>
+<p>The area of a shape depends on the type of figure. Below are key formulas for triangles, quadrilaterals, and circles.</p>
+
+<h3 id="area-triangles">Triangles</h3>
+
+<div class="definition">
+<strong>Area Formulas for Triangles:</strong>
+<ol>
+    <li><strong>Base and Height:</strong> If a triangle has base $b$ and height $h$ (the perpendicular distance from the opposite vertex to the base),
+    $A = \tfrac{1}{2} \cdot b \cdot h.$</li>
+    <li><strong>Two Sides and Included Angle (SAS):</strong> If two sides $a$ and $b$ and the included angle $\theta$ are known, then
+    $A = \tfrac{1}{2} ab \sin \theta.$</li>
+    <li><strong>Inradius and Semiperimeter:</strong> If $r$ is the inradius of the inscribed circle and $s$ the semiperimeter,
+    $s = \tfrac{a+b+c}{2}, \qquad A = r \cdot s.$</li>
+</ol>
+</div>
+
+<p>All three formulas yield the same area if applied correctly. The inradius version highlights the link between a triangle and its incircle, while the SAS formula is especially useful for non-right triangles.</p>
+
+<div class="theorem">
+<strong>Heron's Formula:</strong>
+<p>For any triangle with side lengths $a,b,c$ and semiperimeter $s=\tfrac{a+b+c}{2}$, the area is</p>
+$A = \sqrt{s(s-a)(s-b)(s-c)}.$
+</div>
+
+<div class="exercise-section">
+<h4>Exercise</h4>
+<p>Use Heron's Formula to confirm that a $3\!-\!4\!-\!5$ triangle is right-angled.</p>
+<p><strong>Hint 1:</strong> Express the height $h$ in terms of $a,b,c$.</p>
+<p><strong>Hint 2:</strong> Use the Pythagorean Theorem on the two smaller triangles formed.</p>
+</div>
+
+<div class="text-center">
+  <img src="/textbook/html/geo_figs/geo_fig6.png" alt="" class="img-fluid" style="max-width: 500px;">
+<figcaption>Figure 6: Visual idea behind Heron's formula.</figcaption>
+
+</div>
+
+<div class="theorem">
+<strong>Brahmagupta's Formula:</strong>
+<p>For a cyclic quadrilateral with side lengths $a,b,c,d$ and semiperimeter</p>
+$s = \tfrac{a+b+c+d}{2},$
+<p>the area is</p>
+$A = \sqrt{(s-a)(s-b)(s-c)(s-d)}.$
+</div>
+
+<p>If one side length tends to zero, Brahmagupta's Formula reduces to Heron's Formula.</p>
+
+<h3 id="area-quadrilaterals">Quadrilaterals</h3>
+
+<div class="definition">
+<strong>Trapezoid:</strong>
+<p>A trapezoid is a quadrilateral with at least one pair of parallel sides. The two parallel sides are called bases.</p>
+<p>If the bases have lengths $b_1$ and $b_2$ and the height is $h$, then</p>
+$A = \tfrac{h}{2}(b_1+b_2).$
+</div>
+
+<div class="definition">
+<strong>Parallelogram:</strong>
+<p>A parallelogram has two pairs of parallel sides with the following properties:</p>
+<ul>
+    <li>Opposite sides are equal in length.</li>
+    <li>Opposite angles are equal.</li>
+    <li>Diagonals bisect each other.</li>
+    <li>Consecutive angles are supplementary.</li>
+</ul>
+<p>If $b$ is the base and $h$ is the height,</p>
+$A = b \cdot h.$
+</div>
+
+<div class="definition">
+<strong>Rhombus:</strong>
+<p>A rhombus is a parallelogram with four equal sides.</p>
+<p>If the diagonals have lengths $d_1,d_2$, then</p>
+$A = \tfrac{1}{2}d_1 d_2.$
+</div>
+
+<div class="definition">
+<strong>Rectangle:</strong>
+<p>A rectangle is a parallelogram with four right angles.</p>
+<p>If the side lengths are $\ell$ and $w$, then</p>
+$A = \ell \cdot w.$
+</div>
+
+<div class="definition">
+<strong>Square:</strong>
+<p>A square is a rhombus with right angles (equivalently, a rectangle with equal sides).</p>
+<p>If a side length is $s$, then</p>
+$A = s^2.$
+</div>
+
+<h3 id="area-circles">Circles</h3>
+
+<div class="theorem">
+<strong>Theorem:</strong>
+<p>If a circle has radius $r$, then</p>
+$A = \pi r^2.$
+</div>
+
+<div class="exercise-section">
+<h4>Exercise</h4>
+<p>Prove that the area of a circle is $\pi r^2$ by partitioning it into sectors and rearranging them into a rectangle of dimensions $\pi r$ by $r$.</p>
+</div>
+
+<div class="text-center">
+  <img src="/textbook/html/geo_figs/geo_fig9.png" alt="" class="img-fluid" style="max-width: 500px;">
+<figcaption>Figure 7: Decomposing a circle into pizza slices to find area..</figcaption>
+
+</div>
+
+<h2 id="special-parts">Chapter 4: Special Parts of a Triangle</h2>
+
+<h3 id="perpendicular-bisectors">Perpendicular Bisectors</h3>
+
+<p>A triangle has three perpendicular bisectors, one for each side.</p>
+<p>The perpendicular bisector of a side is defined as the line that bisects the side at a $90^\circ$ angle.</p>
+<p>All three perpendicular bisectors intersect at a single point, the <strong>circumcenter</strong>, which is the center of the circle passing through all vertices (circumcircle).</p>
+
+<div class="text-center">
+  <img src="/textbook/html/geo_figs/tikzpic1.png" alt="" class="img-fluid" style="max-width: 500px;">
+<figcaption>Figure 8: Perpendicular bisector of a segment.</figcaption>
+
+</div>
+
+<div class="theorem">
+<strong>Theorem:</strong>
+<p>If a point is equidistant from the endpoints of a segment, then it lies on the perpendicular bisector of the segment.</p>
+</div>
+
+<div class="theorem">
+<strong>Theorem:</strong>
+<p>Any point on the perpendicular bisector of a segment is equidistant from the segment's endpoints.</p>
+</div>
+
+<p><strong>Coordinate Form:</strong> Let a segment have endpoints $A(x_1,y_1)$ and $B(x_2,y_2)$.</p>
+<ul>
+    <li>Midpoint $M = \Bigl(\tfrac{x_1+x_2}{2}, \tfrac{y_1+y_2}{2}\Bigr)$</li>
+    <li>Slope of $AB$: $m_{AB} = \tfrac{y_2-y_1}{x_2-x_1}$</li>
+    <li>Slope of perpendicular bisector: $m_\perp = -\tfrac{1}{m_{AB}}$</li>
+</ul>
+<p>Equation of perpendicular bisector:</p>
+$y - \tfrac{y_1+y_2}{2} \;=\; -\tfrac{x_2-x_1}{y_2-y_1}\Bigl(x - \tfrac{x_1+x_2}{2}\Bigr).$
+
+<h3 id="angle-bisectors">Angle Bisectors</h3>
+
+<p>The angle bisector of an angle splits it into two equal angles.</p>
+
+<div class="theorem">
+<strong>Angle Bisector Theorem:</strong>
+<p>In $\triangle ABC$, if $BD$ is the angle bisector of $\angle ABC$, then</p>
+$\frac{AB}{AD} \;=\; \frac{BC}{CD}.$
+<p>Equivalently, $AB \cdot CD = AD \cdot BC$.</p>
+</div>
+
+<div class="text-center">
+  <img src="/textbook/html/geo_figs/geo_fig7.png" alt="" class="img-fluid" style="max-width: 500px;">
+<figcaption>Figure 9: Angle bisector theorem in a triangle.</figcaption>
+
+</div>
+
+<h3 id="medians">Medians</h3>
+
+<p>A median of a triangle is a line segment drawn from a vertex to the midpoint of the opposite side.</p>
+<p>Each median divides the triangle into two equal-area smaller triangles.</p>
+<p>All three medians intersect at a single point called the <strong>centroid</strong>.</p>
+
+<div class="theorem">
+<strong>Theorem:</strong>
+<p>The centroid divides each median in a $2:1$ ratio, with the longer segment nearest the vertex.</p>
+</div>
+
+<div class="text-center">
+  <img src="/textbook/html/geo_figs/geo_fig8.png" alt="" class="img-fluid" style="max-width: 500px;">
+<figcaption>Figure 10: A triangle showing the three medians and centroid.</figcaption>
+
+</div>
+
+<h3 id="altitudes">Altitudes</h3>
+
+<p>The altitude of a triangle is a line from a vertex perpendicular to the opposite side.</p>
+<p>All three altitudes intersect at a single point called the <strong>orthocenter</strong>.</p>
+
+<h2 id="circle-parts">Chapter 5: Parts of a Circle</h2>
+
+<h3 id="inscribed-angles">Inscribed Angles</h3>
+
+<p>An inscribed angle is an angle whose vertex lies on the circle and whose sides intercept an arc of the circle.</p>
+
+<div class="text-center">
+  <img src="/textbook/html/geo_figs/geo_fig10.png" alt="" class="img-fluid" style="max-width: 500px;">
+<figcaption>Figure 11: Inscribed angles in a circle $A$ intercepting an arc of the circle.</figcaption>
+
+</div>
+
+<div class="theorem">
+<strong>Theorem:</strong>
+<p>An inscribed angle is half the measure of the central angle that subtends the same arc.</p>
+<p>In symbols, if $\angle A$ is inscribed and $\angle B$ is central over the same arc, then</p>
+$m\angle A = \tfrac{1}{2} m\angle B.$
+</div>
+
+<h3 id="tangents-secants">Tangents and Secants</h3>
+
+<div class="definition">
+<strong>Definitions:</strong>
+<ul>
+    <li>A <strong>tangent line</strong> to a circle is a line that intersects the circle at exactly one point. The radius drawn to this point of tangency is perpendicular to the tangent.</li>
+    <li>A <strong>secant line</strong> intersects the circle in two distinct points.</li>
+</ul>
+</div>
+
+<div class="text-center">
+  <img src="/textbook/html/geo_figs/geo_fig11.png" alt="" class="img-fluid" style="max-width: 500px;">
+<figcaption>Figure 12: A tangent touches the circle in one point, while a secant cuts across in two points.</figcaption>
+
+</div>
+
+<h3 id="power-of-point">Power of a Point</h3>
+
+<p>The <em>Power of a Point Theorem</em> describes relations among products of segments formed when lines are drawn through a fixed point and intersect a circle.</p>
+
+<div class="theorem">
+<strong>Intersection Within a Circle:</strong>
+<p>If two chords $AB$ and $CD$ intersect at a point $P$ inside the circle, then</p>
+$PA \cdot PB = PC \cdot PD.$
+</div>
+
+<div class="text-center">
+  <img src="/textbook/html/geo_figs/geo_fig12.png" alt="" class="img-fluid" style="max-width: 500px;">
+<figcaption>Figure 13: Two intersecting chords inside a circle.</figcaption>
+
+</div>
+
+<div class="theorem">
+<strong>Intersection Outside a Circle:</strong>
+<p>If a point $P$ lies outside the circle and two secants $PA, PB$ and $PC, PD$ are drawn, then</p>
+$PA \cdot PB = PC \cdot PD.$
+</div>
+
+<div class="text-center">
+  <img src="/textbook/html/geo_figs/geo_fig13.png" alt="" class="img-fluid" style="max-width: 500px;">
+<figcaption>Figure 14: Two secant lines intersecting outside a circle.</figcaption>
+
+</div>
+
+<div class="theorem">
+<strong>Intersection with One Tangent:</strong>
+<p>If from a point $P$ outside the circle a tangent $PT$ and a secant $PAB$ are drawn, then</p>
+$PT^2 = PA \cdot PB.$
+</div>
+
+<div class="theorem">
+<strong>Intersection with Two Tangents:</strong>
+<p>If two tangents $PA$ and $PB$ are drawn from an external point $P$ to a circle, then</p>
+$PA = PB.$
+</div>
+
+<h2 id="3d-geometry">Chapter 6: 3D Geometry</h2>
+
+<h3 id="prisms">Prisms</h3>
+
+<div class="definition">
+<strong>Definition:</strong>
+<p>A prism is a 3D figure with two congruent $n$-sided polygonal bases connected by parallelogram faces.</p>
+<p>Examples: triangular prism, rectangular prism (cuboid), cube, hexagonal prism, etc.</p>
+</div>
+
+<div class="theorem">
+<strong>Volume:</strong>
+<p>If the base has area $B$ and the height is $h$, then</p>
+$V = B \cdot h.$
+</div>
+
+<h3 id="pyramids-cones">Pyramids and Cones</h3>
+
+<div class="definition">
+<strong>Pyramid:</strong>
+<p>A pyramid is a 3D solid with a polygonal base and triangular faces converging at a single apex.</p>
+</div>
+
+<div class="definition">
+<strong>Cone:</strong>
+<p>A cone is similar to a pyramid, with a circular base and curved lateral surface converging to an apex.</p>
+</div>
+
+<div class="theorem">
+<strong>Volume:</strong>
+<p>If the base has area $B$ and altitude $h$, then</p>
+$V = \tfrac{1}{3} B h.$
+<p>For a cone with circular base of radius $r$,</p>
+$V = \tfrac{1}{3}\pi r^2 h.$
+</div>
+
+<h3 id="cylinders">Cylinders</h3>
+
+<div class="definition">
+<strong>Definition:</strong>
+<p>A cylinder is a 3D solid with two congruent circular bases joined by a curved surface, with axis perpendicular to the bases.</p>
+</div>
+
+<div class="theorem">
+<strong>Volume:</strong>
+<p>If the base has radius $r$ and height $h$, then</p>
+$V = \pi r^2 h.$
+</div>
+
+<h3 id="spheres">Spheres</h3>
+
+<div class="definition">
+<strong>Definition:</strong>
+<p>A sphere consists of all points in space at a fixed distance $r$ from a central point. It can be generated by rotating a circle about its diameter.</p>
+</div>
+
+<div class="theorem">
+<strong>Volume and Surface Area:</strong>
+<p>For a sphere of radius $r$:</p>
+$\text{Surface Area} = 4\pi r^2,$
+$\text{Volume} = \tfrac{4}{3}\pi r^3.$
+</div>
+
+<h2 id="analytic-geometry">Chapter 7: Analytic Geometry</h2>
+
+<p>Analytic Geometry involves representing geometric figures using algebra.</p>
+<p>For example, one may find the intersection of a line with a square by representing the side of the square and the line as linear equations whose solution gives the intersection point.</p>
+<p>Analytic Geometry is often useful when geometric theorems don't apply directly. It is sometimes considered a "brute force" method — longer at times, but reliable.</p>
+
+<h3 id="lines">Lines</h3>
+
+<p>Lines and polygons are simple enough to represent. All straight lines may be written as linear equations, and intersection points are found by solving simple systems.</p>
+
+<div class="definition">
+<strong>Definition:</strong>
+<p>Any straight line in the plane can be written in the general form</p>
+$ax + by + c = 0,$
+<p>where $a$ and $b$ are not both zero.</p>
+</div>
+
+<div class="exercise-section">
+<h4>Exercise</h4>
+<p>Square $ABCD$ has a line drawn from $A$ to the midpoint of $BC$.</p>
+<p>Similarly, another line is drawn from $D$ to the midpoint of $AB$.</p>
+<p>Determine what fraction of the square's area is sectioned off in the bottom-left corner.</p>
+</div>
+
+<h3 id="circles-analytic">Circles</h3>
+
+<p>The algebraic equation of a circle is written as $(x-h)^2+(y-k)^2=r^2$. Here, $h$ and $k$ represent the $x$ and $y$ coordinates of the center of the circle. $r$ represents the radius of the circle. When your circle theorems aren't working, consider algebraically representing the circle and other geometric figures and work from there.</p>
+
+<div class="definition">
+<strong>Definition:</strong>
+<p>The general equation of a circle with center $(h,k)$ and radius $r$ is</p>
+$(x-h)^2 + (y-k)^2 = r^2.$
+</div>
+
+<div class="exercise-section">
+<h4>Exercise</h4>
+<p>Find the points of intersection between the circle centered at $(2,2)$ with radius $5$ and the line $y=3x+1$.</p>
+</div>
+
+<h3 id="distance-point-line">Distance Between a Point and a Line</h3>
+
+<p>Oftentimes when working with analytic geometry, you'll need to find the distance between a point and a line.</p>
+
+<div class="theorem">
+<strong>Theorem:</strong>
+<p>The distance $d$ from a point $(x_0,y_0)$ to a line</p>
+$ax+by+c=0$
+<p>is</p>
+$d = \frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}.$
+</div>
+
+<div class="exercise-section">
+<h4>Exercise</h4>
+<p>Find the distance between the point $(7,4)$ and the line $y=x$.</p>
+<p>Show your steps in applying the formula.</p>
+</div>
+
+<div class="solution-section">
+<h4>Solution</h4>
+<p>Substituting $a=-1$, $b=1$, $c=0$ into the formula:</p>
+$d = \frac{|-7+4|}{\sqrt{(-1)^2+1^2}} = \frac{3}{\sqrt{2}} = \tfrac{3\sqrt{2}}{2}.$
+</div>
+
+<h2 id="trigonometry">Chapter 8: Trigonometry</h2>
+
+<h3 id="soh-cah-toa">SOH–CAH–TOA</h3>
+
+<p>Trigonometry, specifically right triangle trigonometry, focuses on the ratios between different sides of a right triangle. The three main trigonometric functions are sine, cosine, and tangent. Given an angle $\theta$, we can use the acronym SOH-CAH-TOA to remember the values of separate ratios in a triangle.</p>
+
+<p>SOH-CAH-TOA stands for:</p>
+<ul>
+    <li>Sine = Opposite/Hypotenuse</li>
+    <li>Cosine = Adjacent/Hypotenuse</li>
+    <li>Tangent = Opposite/Adjacent = Sine/Cosine</li>
+</ul>
+
+<div class="definition">
+<strong>Definition:</strong>
+<p>In a right triangle, the three primary trigonometric functions of an acute angle $\theta$ are:</p>
+$\sin(\theta) = \tfrac{\text{Opposite}}{\text{Hypotenuse}}, \quad \cos(\theta) = \tfrac{\text{Adjacent}}{\text{Hypotenuse}}, \quad \tan(\theta) = \tfrac{\text{Opposite}}{\text{Adjacent}} = \tfrac{\sin\theta}{\cos\theta}.$
+</div>
+
+<h3 id="unit-circle">The Unit Circle</h3>
+
+<div class="definition">
+<strong>Definition:</strong>
+<p>The unit circle is a circle of radius 1 centered at the origin on the Cartesian plane.</p>
+</div>
+
+<div class="exercise-section">
+<h4>Exercise</h4>
+<p>What is the equation of the unit circle?</p>
+</div>
+
+<div class="solution-section">
+<h4>Solution</h4>
+<p>The equation is</p>
+$x^2 + y^2 = 1.$
+</div>
+
+<div class="theorem">
+<strong>Theorem:</strong>
+<p>Since the radius is $1$, the $x$-coordinate of a point at angle $\theta$ is $\cos(\theta)$ and the $y$-coordinate is $\sin(\theta)$.</p>
+<p>Therefore, any point on the unit circle corresponding to angle $\theta$ has coordinates</p>
+$(\cos \theta, \; \sin \theta).$
+<p>From this, we obtain the fundamental identity:</p>
+$\cos^2(\theta)+\sin^2(\theta)=1,$
+<p>known as the <em>Pythagorean Identity</em>.</p>
+</div>
+
+<p>Mastery of the unit circle is key for evaluating trigonometric functions quickly.</p>
+
+<h3 id="law-of-cosines">Law of Cosines</h3>
+
+<p>The law of cosines is particularly useful when it comes to solving non-right triangles, serving as an extension and generalization of the Pythagorean theorem. The law of cosines allows us to solve for missing side lengths or angles in triangles that would be otherwise difficult to solve.</p>
+
+<div class="theorem">
+<strong>Law of Cosines:</strong>
+<p>For any triangle with sides $a,b,c$ opposite angles $A,B,C$,</p>
+$c^2 = a^2 + b^2 - 2ab\cos(C).$
+</div>
+
+<p>Therefore, if we knew the value of $a$, $b$, and angle $C$, we could use the law of cosines to solve for the last side length of the triangle.</p>
+
+<div class="exercise-section">
+<h4>Exercise</h4>
+<p>In $\triangle ABC$, sides $a=7$, $b=9$, and included angle $C=45^\circ$. Find the perimeter.</p>
+</div>
+
+<div class="solution-section">
+<h4>Solution</h4>
+<p>Using the Law of Cosines:</p>
+$c^2 = 7^2 + 9^2 - 2(7)(9)\cos 45^\circ = 130 - 126\cdot \tfrac{\sqrt{2}}{2}.$
+<p>So</p>
+$c = \sqrt{130 - 63\sqrt{2}},$
+<p>and the perimeter is $7+9+c$.</p>
+</div>
+
+<h3 id="law-of-sines">Law of Sines</h3>
+
+<p>The law of sines, similar to the law of cosines, allows us to find missing angles and side lengths of a triangle. The formula is defined as:</p>
+
+<div class="theorem">
+<strong>Law of Sines:</strong>
+<p>For any triangle,</p>
+$\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}.$
+</div>
+
+<div class="exercise-section">
+<h4>Exercise</h4>
+<p>In $\triangle ABC$, $a=3$, $\angle A=40^\circ$, and $\angle C=70^\circ$. Find $c$ (to 2 decimal places).</p>
+</div>
+
+<div class="solution-section">
+<h4>Solution</h4>
+$\frac{\sin 40^\circ}{3} = \frac{\sin 70^\circ}{c} \quad\Rightarrow\quad c = \frac{3\sin 70^\circ}{\sin 40^\circ} \approx 3.11.$
+</div>
+
+<h3 id="sum-difference">Sum and Difference Formulas</h3>
+
+<p>In order to find slightly more complex sine and cosine values, we use sum and difference formulas. These allow us to express trig values in terms of other values, such as sine and cosine. The formulas are:</p>
+
+<div class="theorem">
+<strong>Sum and Difference Formulas:</strong>
+$\sin(A \pm B) = \sin A \cos B \pm \cos A \sin B,$
+$\cos(A \pm B) = \cos A \cos B \mp \sin A \sin B.$
+</div>
+
+<div class="exercise-section">
+<h4>Exercise</h4>
+<p>Derive the formula for $\tan(A+B)$.</p>
+</div>
+
+<div class="solution-section">
+<h4>Solution</h4>
+$\tan(A+B) = \frac{\sin(A+B)}{\cos(A+B)} = \frac{\tan A + \tan B}{1 - \tan A \tan B}.$
+</div>
+
+<div class="exercise-section">
+<h4>Exercise</h4>
+<p>Evaluate $\sin 75^\circ$ using a sum formula.</p>
+</div>
+
+<h2 id="cool-theorems">Chapter 9: Cool Theorems</h2>
+
+<h3 id="cevas-theorem">Ceva's Theorem</h3>
+
+<div class="theorem">
+<strong>Ceva's Theorem:</strong>
+<p>Given a triangle $ABC$ with a point $P$ inside, and cevians $AP$, $BP$, and $CP$ extended to meet the opposite sides at $D$, $E$, and $F$, respectively, then</p>
+$\frac{AF}{FB} \cdot \frac{BD}{DC} \cdot \frac{CE}{EA} = 1.$
+</div>
+
+<div class="exercise-section">
+<h4>Challenge Exercise</h4>
+<p><strong>Challenge:</strong> Prove Ceva's Theorem.</p>
+<p><strong>Hint 1:</strong> Use the lengths $AF$ and $FB$ as the bases of triangles $ACF$ and $BCF$. If the height is the same, what does that tell us about the areas? Taking it a step further, consider the ratio of $[APE]$ and $[BPD]$.</p>
+<p><strong>Hint 2:</strong> Try to rewrite the original theorem in terms of the ratios of triangle areas and see if factors cancel.</p>
+</div>
+
+<h3 id="menelaus-theorem">Menelaus' Theorem</h3>
+
+<div class="theorem">
+<strong>Menelaus' Theorem:</strong>
+<p>Given a triangle $ABC$, let a transversal line intersect sides (or their extensions) $BC$, $CA$, and $AB$ at points $D$, $E$, and $F$, respectively. Then</p>
+$\frac{BD}{DC} \cdot \frac{CE}{EA} \cdot \frac{AF}{FB} = 1.$
+</div>

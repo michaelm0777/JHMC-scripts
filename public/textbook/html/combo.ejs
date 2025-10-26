@@ -1,0 +1,252 @@
+<div id="content">
+<h1 id="intro-to-combo">Intro to Combinatorics</h1>
+
+<p>Combinatorics is one of the four main areas of competition math and is made up of two smaller subsections: counting and probability. Counting is all about finding out how many "cases" or "states" satisfy a certain condition. Probability, conversely, is about finding the chance that something succeeds or fails. Combinatorial problems often deal with percentages, fractions, and large numbers. There is a distinct simplicity within combinatorics compared to the other three competition categories, as the only requirement for the vast majority of high school-level or below problems showing up in competition is arithmetic…</p>
+
+<h2 id="counting">Counting</h2>
+
+<p>Counting is the more simple of the two main fields within combinatorics, so we'll start with this one first. As stated before, counting fundamentally boils down to figuring out the number of "cases" that satisfy a certain amount of conditions. As a simple example problem, let's say that Will the farmer has $36$ pigs on his farm, and half of them are colored blue while the other half are colored red. We want to figure out how many total blue legs (that belong to livestock) are on his farmland. Assuming that all of his pigs have 4 legs, then our answer would be $36 \cdot 4 \cdot \frac{1}{2} = \boxed{72}$ legs in total. Here, a case would be a leg and the condition is that they must be blue.</p>
+
+<h2 id="probability">Probability</h2>
+
+<p>Probability problems ask you to find the chance that certain conditions will be fulfilled. Answers may come in the form of fractions, percentages, or decimals. Moreover, the answer will always be between 0 and 1 inclusive (100% = 1). At this level, probability problems are essentially just counting problems with an extra step (dividing by the total number of cases). You find the number of successful cases that satisfy your condition(s) and then divide that by the total number of cases present to get your answer. As a simple example problem, let's say farmer Max has 18 blue carrots, 18 red carrots, and 18 yellow carrots, if Max selects a carrot at random, what is the probability that it is red? Here, there are $18$ successful red carrots, and $54$ carrots to select from in total, so the answer is $\frac{18}{54}$ or $\boxed{\frac{1}{3}}$. Another extremely common concept is the multiplication rule for independent events. If condition A has a $\frac{1}{2}$ chance of occurring while condition B has a $\frac{1}{3}$ chance of occurring, and these probabilities are independent, then the probability that both conditions occur is $\frac{1}{2} \cdot \frac{1}{3} = \frac{1}{6}$. For example, if farmer Michael has a $\frac{1}{4}$ chance of waking up late each day and a $\frac{1}{6}$ chance that the day is raining, then there is a $\frac{1}{4} \cdot \frac{1}{6} = \boxed{\frac{1}{24}}$ chance that Michael wakes up late <em>and</em> it is raining on any given day.</p>
+
+<h2 id="fundamentals-of-counting">Fundamentals of Counting</h2>
+
+<p>The following four methods in this section are the fundamental ways in which a combinatorial problem may be solved. Every combinatorial solution will fall into one (or more) of these categories. Oftentimes, multiple methods may be employed in conjunction to solve a more complicated problem. These methods aren't so much formulas to use as they are angles of approach that you can take when dealing with a probem. Thus, these subsections won't have very many example problems.</p>
+
+<h4 id="direct-counting">Direct Counting</h4>
+
+<p>When solving a counting problem, solutions may either be direct or indirect. Direct counting, as the name suggests, involves directly counting the number of cases that satisfy your conditions. Direct counting, like complementary counting, may often employ several different techniques and theorems such as casework, permutations, etc. As a very simple example, let's say Drew the dog gets a treat every weekday. If we want to calculate how many treats he has received after $8$ weeks, we can just multiply $8 \cdot 5$ to get our answer of $\boxed{40}$ dog treats.</p>
+
+<h4 id="complementary-counting">Complementary Counting</h4>
+
+<p>Complementary counting involves counting the number of cases that fail, and subtracting that number from the total number of cases. Oftentimes, direct counting may be complicated, with many different annoying cases to bash. Thus, complementary counting represents a possible simpler alternative. If Roy the Rooster has $5$ unique worms in front of him, how many ways can he eat $2$ or more of the worms? Here, instead of counting the cases in which he eats $2$, $3$, $4$, and $5$ worms, we can count the ways in which he eats $1$ or $0$ worms. There are $5$ ways to eat $1$ of the worms, since he can pick any of the $5$ worms to eat. There is $1$ way to eat $0$ worms trivially. Thus, there are $6$ ways where Roy fails to meet his conditions. There are $32$ total cases here, since for each worm, there are $2$ possibilities for them: eaten or uneaten. $2^5$ is 32. Because there are $6$ ways in which Roy fails, there are $32-6 = \boxed{26}$ ways in which he succeeds in his conditions.</p>
+
+<h4 id="casework">Casework</h4>
+
+<p>As the name suggests, casework is employed when you have multiple cases to consider. Sometimes, you can't solve your problem with just one calculation, and you have to consider multiple different "sets" of successful cases that all satisfy your condition. Going back to Roy and his worms, let's use casework instead of complementary counting. Here, we must split our count up into $4$ different cases– a case for each number of worms Roy decides to eat. There are $10$ ways for Roy to eat $2$ worms, $10$ ways for Roy to eat $3$ worms, $5$ ways for Roy to eat $4$ worms, and $1$ way for Roy to eat all $5$ worms. If you don't understand how we got these numbers, I suggest looking at our combinations sections under "Counting Techniques". If we add all of these up, you'll see that we reach an answer of $\boxed{26}$, which is the same answer we got when we used complementary counting.</p>
+
+<h4 id="overcounting">Overcounting</h4>
+
+<p>Oftentimes, overcounting your successful cases with a simple calculation and subsequently subtracting the number of "overlapping" or "overcounted" cases may be a quick method to supplement casework. A concept that encapsulates this idea is the principle of inclusion-exclusion, also known as PIE. Here's a question, how many numbers less than or equal to $200$ are divisible by either $4$ or $5$? We know there are $\frac{200}{4} = 50$ numbers divisible by $4$ and $\frac{200}{5} = 40$ numbers divisible by $5$, so the number we get is $90$. However, we are overcounting numbers divisible by both $4$ and $5$ at the same time. For example, we counted $20$ as one of our numbers when we were considering divisibility by $4$, but we also counted it once more when considering divisibility by $5$. Thus, we have overcounted. To fix this, just subtract the number of numbers divisible by both $4$ and $5$. This is $10$ numbers. Thus, our actual answer is $90 - 10 = \boxed{80}$ numbers.</p>
+
+<h2 id="counting-techniques">Counting Techniques</h2>
+
+<h4 id="factorials">Factorials</h4>
+
+<p>Consider having \(5\) cows named Alex, Bessie, Charlie, Daisy, and Emily. If you wanted to arrange your cows, you might wonder how many ways that's possible. Thus, let's consider the first position. Since you could place any cow in the first position, there are \(5\) ways you could pick the cow that goes first (for example, pick Bessie). Then, in the second position, you can pick any other cow that wasn't already picked (so the four excluding Bessie). As you might see, continuing this process until the last cow has been chosen would lead you to having a total of \(5x4x3x2x1\) ways in order to arrange your cows. However, if we had instead \(10\) cows, or even \(100\) cows, such a notation would get massive. As such, let's shorten that idea of multiplying all of the numbers down to \(1\) as \(n!\). \(n!\) is a function such that it is equal to \((n)\cdot(n-1)\cdot(n-2)\cdot(n-3)\dots3\cdot3\cdot2\cdot1\). This notation is also extremely convenient for our next topics.</p>
+<p>Some Exercises:</p>
+<p>Simplify the expression $\frac{7!}{5!}$</p>
+<p>If you expanded the notation outwards, you would notice that $7!$ has $5!$ inside of it. That means that $7!$ is a multiple of $5!$, specifically $7*6$ times $5!$. Instinctively, this makes sense because if we applied the multiplication of a factorial from one (like $1x2x3x4 \dots x(n-1)x(n)$), and then computed the division at each step, the first step would become $\frac{1}{1}\frac{2}{2}\frac{3}{3}\frac{4}{4}\frac{5}{5}$ and then $7!$ continues to be $7\cdot6$.</p>
+<p>Explain why $(n+1)! = (n+1)n!$.</p>
+<p>Rewriting $(n+1)!$ should lead you to notice that it results in $(n+1)\cdot(n)\cdot(n-1)\cdot(n-2)\cdot(n-3)\dots3\cdot3\cdot2\cdot1$. Then, $n! = (n)\cdot(n-1)\cdot(n-2)\cdot(n-3)\dots3\cdot3\cdot2\cdot1$. And substituting will give you the result.</p>
+<p>Solve for x when $x! = 120$.</p>
+<p>If you start at one and start multiplying the next integer, you would obtain the sequence of $1, 2, 6, 24, 120$. So the answer is 5.</p>
+<p>Find x when $\frac{x+2}{x} = 132$.</p>
+<p>Using the other tricks we learned in above exercises, this can be simplified into $(x+2)(x+1)$ (Why? Look at problem one). Then, we can observe that 132 factors nicely into 11 and 12. So $x+2 = 12$, and x = 10.</p>
+
+<h4 id="permutations">Permutations</h4>
+
+<p>So with factorials, we can arrange any number of cows into a line. However, what happens if we only wanted to arrange three cows out of our five, for example for a county fair? Obviously, we can apply the same process that we had before: which cow should we pick to be in the first position? Well, we can have $5$ different cows. And then, in the second position, $4$ different cows. Finally, in our last position, $3$ different cows. Notably, we have stopped before place $5-3=2$. So what would happen if we expanded the amount of cows or changed the amount of cows picked? If we say that $n$ is the amount of cows, and that $r$ is the amount of cows picked, we would see that there are $n(n-1)(n-2)(n-3)\dots(n-r+1)(n-r)$ ways of doing so. Now then, since we stop before multiplying the rest of the way down to one, we might notice that if we multiplied that amount by $(n-r)!$, we would get $n!$. So, we can dictate the amount of permutations (which means to pick a certain number of things and put them in an order) is exactly $\frac{n!}{(n-r)!}$.</p>
+<div class="exercise-section">
+<ol>
+<li>A ranked committee of 3 (president, vice president, and secretary) is to be formed from a group of 7 people. How many ways can this be done if one particular person must be on the committee?</li>
+<li>How many ways can 5 men and 5 women be arranged in a line from 1-10 if no two women are adjacent?</li>
+<li>How many ways can a 5-member ordered committee (President, Vice President, Secretary, Treasurer, representative) be formed from 10 people if two specific people cannot be on the committee together?</li>
+</ol>
+</div>
+
+<div class="solution-section">
+<ol>
+<li>If one particular person must be on the committee, we need to choose 2 more people from the remaining 6 people and arrange them. There is 3 ways for the first person to be chosen, and this now is $\frac{6!}{4!}$ or 30. Multiplying by 3, the answer is $\boxed{90}$</li>
+<li>This question is a little odd for us, because we don't have a way to encode adjacency. However, notice that if we place the men first, as long as we don't place two women in the same spot they will never be adjacent. So initially, there are $5!=120$ ways to arrange the men. Then, there are 6 positions for the women to go. So this is $\frac{6!}{6-5!}$ or 720. Multiplying the two gives us $\boxed{86400}$.</li>
+<li>Either neither people are on the committee, one person is on the committee, or both are on the committee. So we can find the total number of ways to make the committee and then subtract the amount of ways both of them are on the committee. First, the total amount of ways is to make $\frac{10!}{5!}$ or $720*42$. Then, the ways to make the committee with both is $5*4*\frac{8!}{5!}$ or $160*42$. The answer is then $\boxed{23520}$.</li>
+</ol>
+</div>
+
+<h4 id="combinations">Combinations</h4>
+
+<p>What if instead of arranging into a line, we just wanted to pick a group? Well, this must be related in some way to permutations. In fact, we can pick the cows and arrange them into a group. But then, we have to account for how they are arranged (if there are $x$ ways to arrange them, we should divide that from the permutations formula). Helpfully, in our first section we found that the amount of ways to arrange is the factorial. So, the amount of ways to pick a group of r from n is $\binom{n}{r} = \frac{n!}{r!(n-r)!}$. What does this look like? Well, suppose you had to choose $3$ books to take with you on vacation, and you have $10$ books. How many different ways is that possible? According to our formula, there are $\frac{10!}{3!7!}$ ways, or $120$ ways.</p>
+
+<div class="exercise-section">
+<ol>
+<li>Problem: How many ways can a committee of 4 be formed from 8 men and 5 women if the committee must include exactly 2 men and 2 women?</li>
+</ol>
+</div>
+<div class="solution-section">
+<ol>
+<li>Solution: Pick 2 men from 8, and 2 women from 5. This achieves $\frac{8!}{2!6!}\frac{5!}{3!2!}$. This is then 280.</li>
+</ol>
+</div>
+
+<h4 id="combinatorial-identities">Combinatorial Identities</h4>
+
+<h5 id="n-choose-k">n choose k = n choose n-k</h5>
+
+<p>The operation $\binom{n}{k}$ represents the number of ways to choose $k$ items from n distinct options when order doesn't matter. The formula is $\binom{n}{k} = \frac{n!}{(n-k)!k!}$.</p>
+
+<p>One important identity of this operation is symmetry: $\binom{n}{k} = \binom{n}{n-k}$. We can represent this identity both combinatorially and algebraically.</p>
+
+<p>Viewing it from the combinatorial perspective, we can think of $\binom{n}{n-k}$ as choosing the number of ways to leave k values out. For example, we can find the combinations of ABCD to show $\binom{4}{1} = \binom{4}{4-1}$:</p>
+<ul>
+<li>ABC = not choosing D</li>
+<li>ABD = not choosing C</li>
+<li>ACD = not choosing B</li>
+<li>BCD = not choosing A</li>
+</ul>
+
+<p>Algebraically, we use the formula: $\frac{n!}{(n-k)!k!}$. Replacing $(n-k)$ with $k$ in the formula, we get $\frac{n!}{(n-(n-k))!(n-k)!} = \frac{n!}{k!(n-k)!}$, which is equivalent to the expression before our replacement.</p>
+
+
+<p>Ultimately, this identity is useful for computational efficiency and simplification.</p>
+
+<h5 id="pascals-theorem">Pascal's theorem (Pascal Triangle)</h5>
+
+<p>An important combinatorial tool is Pascal's triangle, which begins with:</p>
+
+<pre>
+Row 0:              1
+Row 1:            1   1
+Row 2:          1   2   1
+Row 3:        1   3   3   1
+Row 4:      1   4   6   4   1
+</pre>
+
+<p>The kth digit in the nth row can also be expressed as $\binom{n}{k}$, meaning that the first few rows of Pascal's triangle could be expressed as:</p>
+
+<pre>
+Row 0:              C(0,0)
+Row 1:          C(1,0)  C(1,1)
+Row 2:      C(2,0)  C(2,1)  C(2,2)
+Row 3:  C(3,0)  C(3,1)  C(3,2)  C(3,3)
+</pre>
+
+<p>In Pascal's triangle, each value is equal to the sum of the values above it. Can this be explained with combinatorics? The answer is yes, leading to Pascal's identity: $\binom{n-1}{k-1} + \binom{n-1}{k} = \binom{n}{k}$. From a combinatorial perspective, we can imagine that we are choosing $k$ marbles from $n$ total marbles. With any given marble, if we choose it, there will be $\binom{n-1}{k-1}$ options left, as we are now choosing $k-1$ marbles from $n-1$ total options. But, if we decide not to choose it, there will be $\binom{n-1}{k}$ options left, as there is now one left option to choose from, but we still must pick $k$ more from the remaining marbles. Therefore, $\binom{n}{k}$ can be expressed as the sum of the only two possibilities stemming from $\binom{n}{k}$, which are $\binom{n-1}{k-1}$ and $\binom{n-1}{k}$.</p>
+
+<p>Pascal's identity is the basis for the composition of Pascal's triangle, and provides the ability to simplify combinatorial problems and count subsets of a problem.</p>
+
+<h2 id="hockey-stick-identity">Hockey Stick Identity</h2>
+
+<p>The hockey stick identity got its name from its visual representation in Pascal's triangle.</p>
+
+<p>The hockey stick identity states that all integers in the "stick" sum up to the last integer below the stick. In terms of combinatorics, the hockey stick identity says that $\binom{n+1}{k+1} = \binom{n}{k} + \binom{n-1}{k} + \binom{n-2}{k} + \ldots + \binom{k}{k}$. This is useful for problems involving large sums of combinations.</p>
+
+
+<h2 id="paths-on-a-grid">Paths on a Grid</h2>
+
+<p>Getting from one point on a grid to another with certain restrictions is a common combinatorics problem. This section will cover the basics of grid paths, including how to count grid paths and its application into other combinatorics problems. For example, one question may look like:</p>
+
+<p>Given a 5x6 grid, how many unique paths are there to get from the bottom left corner to the top right corner, if one can only go up or to the right?</p>
+
+<p>To solve this problem, we know that we need to go up 6 times and right 5 times. Therefore, we need to find the number of ways we can reorder RRRRRUUUUUU, which is equal to $\frac{11!}{5!6!}$ or $\binom{11}{5}$. This same process can be applied to all grid problems: finding one possible path and then finding all ways to reorder it.</p>
+
+<p>When the problem becomes more challenging, perhaps with the inclusion of grid obstacles, we may subtract the number of valid paths that go through the obstacle from the total number of valid paths.</p>
+
+<h5 id="practice-questions-grid-paths">Practice Questions</h5>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>On a 4x4 grid, if there is an obstacle at (2,1), how many possible paths are there from (0,0) to (4,4) if one can only go right or up?</li>
+<li>Player A and Player B are playing a game by flipping a fair coin. If it lands heads, Player A gets a point, and if it lands tails, Player B gets a point. The first to 4 points wins. If they lose the coin when player A has 2 points and player B has 1 point, how many ways are there for player A to win if they continue the game?</li>
+<li>Max has drawn 45 circles in the shape of a triangle, with 9 in the bottom row, 8 in the next row, and 1 on the top row. How many ways are there to pick 3 different circles from the same horizontal row?</li>
+<li>Max has a box containing 9 distinct balls. How many more ways are there for him to grab 6 of these balls than there are for him to grab 3?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>Without the obstacle, there are $\binom{8}{4} = 70$ valid paths. From the obstacle, there are $\binom{5}{2} = 10$ possible paths to (4,4), and $\binom{3}{1} = 3$ possible paths from (0,0) to the obstacle. Therefore, there are $3 \cdot 10 = 30$ paths going through the obstacle, meaning that there are $70 - 30 = \boxed{40}$ potential paths.</li>
+<li>Player A needs 2 more points to win, and player B needs 3 more points to win. To calculate the chance that player A wins, it is the chance that player A wins 2 coin flips in the next 4 flips. Therefore, we're looking for the number of grid paths that end up above the line $y=2$ after 4 moves. Out of the $2^4$ possible paths, 11 of them end up at or above this line. Therefore, there are $\boxed{11}$ different ways that player A can win.</li>
+<li>There isn't any way to pick 3 circles from the first 2 rows, but starting from the 3rd row, there are $\binom{k}{3}$ ways to choose 3 balls from the $k$th row. Therefore, there are $\binom{3}{3} + \binom{4}{3} + \ldots + \binom{8}{3} + \binom{9}{3}$ ways to pick 3 circles from the same row. Using the hockey stick identity, this sum is equal to $\binom{10}{4} = \boxed{210}$.</li>
+<li>Due to the identity $\binom{n}{k} = \binom{n}{n-k}$, these actually have the same value, and therefore, the difference is $\boxed{0}$.</li>
+</ol>
+</div>
+
+
+
+
+<h4 id="distinguishable-vs-indistinguishable">Distinguishable vs Indistinguishable</h4>
+
+<h5 id="stars-and-bars">Stars and Bars</h5>
+
+<p>Previously, we covered the topic of distributing distinguishable objects into two groups (combinations) and also distributing distinguishable objects into orders (permutations).</p>
+
+<p>We may now be further curious about, for example, the ways to distribute indistinguishable objects among distinguishable items. In this scenario, we imagine that we have a certain number of stars, and we wish to separate them into a few groups. For sake of clarity, we will assume 6 stars and three groups. For now, we take it simply that we cannot have an empty group. First, let's arrange the 6 stars in a row. Then, if we consider what defines a group, we observe that if we knew where the last star in each group was, we could then know how the groups were distributed. Following this observation, we place a bar down following each last star in each group. In this way, one bar must always go last (representing the final group), and it cannot go first. This leaves 5 legal gaps in between the stars, to be filled in with 2 other bars. This leads us to the answer of $\binom{5}{2}$. Formulaically, this can be applied to the case with $n$ stars and $k$ bars, which gives the formula $\binom{n-1}{k-1}$.</p>
+
+<p>Now, the question arises on how to deal with empty groups. Well, in this situation, multiple bars can be placed between stars and bars as well. In this case, we consider the bars and stars to occupy one position (so instead of having 6 stars in a line, 9 positions). This should now let us see that if we place our bars within these positions, the stars can be used to fill in the empty positions. In this way, we can then count the number of ways as the amount of ways to place bars into the sum of both stars and bars. Again, as we have one bar already being placed, this becomes $\binom{n+k-1}{k-1}$.</p>
+<p>As a note, we will almost never see questions that fit directly into this formula. What's going to be key is the concept where one possibility of stars and bars maps directly to one possibility of some other counting problem.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Pat wants to buy four donuts from an ample supply of three types of donuts: glazed, chocolate, and powdered. How many different selections are possible? (2001 AMC 10 #19)</li>
+<li>Alice has 24 apples. In how many ways can she share them with Becky and Chris so that each of the three people has at least two apples? (2019 AMC 8 #25)</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>This question does not seem to fit the framework perfectly. However, if we consider the donuts to be stars, then the groups becomes types of donuts. Since this case does allow us to not have one type of donut, it can be represented as $\binom{4+3-1}{3-1}$, or $\binom{6}{2} = \boxed{15}$.</li>
+<li>If we didn't have the restriction of giving each person at least two apples and instead had to give them only at least one apple, this is exactly the positive version of stars and bars. So essentially, we need to lose one apple per person. Thus, assign each person one apple and apply stars and bars on 21 apples. This is now simply $\binom{20}{2} = \boxed{190}$.</li>
+</ol>
+</div>
+
+<h2 id="conditional-probability">Conditional Probability</h2>
+
+<p>Conditional probability is a fundamental component of probability that focuses on the probability of an event given another event occurring. A famous example of conditional probability is the Monty Hall Problem.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+<ol>
+<li>In front of you are 3 doors numbered 1, 2, and 3. Behind one of them is a car, and the other two have goats behind them. If you originally pick door 1, and you are told that there is a goat behind door 2, what is the probability that the car is behind door 3?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>Originally picking door 1, the chance that the car behind it was $\frac{1}{3}$, and the chance that the car was behind either door 2 or 3 was $\frac{2}{3}$. Therefore, when it is revealed that the car is not behind door 2, the chance that door 3 has the car becomes $\boxed{\frac{2}{3}}$.</li>
+</ol>
+</div>
+
+<p>As can be seen by the Monty Hall problem, conditional probability is not always intuitive. The formula for conditional probability is $P(A|B) = \frac{P(A \cap B)}{P(B)}$, where $P(A|B)$ is the probability of A given B, $P(A \cap B)$ is the probability of both A and B happening, and $P(B)$ is the probability of B occurring. However, in the case when A and B are in the same uniform sample space, this can instead be expressed as $P(A|B) = |\frac{A \cap B}{B}|$. For example, if we had a deck of 52 cards, and wanted to know the probability of drawing a queen of spades given all hearts, diamonds, and clubs had been removed from the deck, we could use our formula. $P(A \cap B) = \frac{1}{52}$, and $P(B) = \frac{1}{4}$. However, since they are both in the same sample space, we can simplify this to $\frac{1}{3}$. Using both methods, we get $P(A|B) = \frac{\frac{1}{52}}{\frac{1}{4}} = \frac{1}{13}$.</p>
+
+<h2 id="geometric-probability">Geometric Probability</h2>
+
+<p>Geometric Probability utilizes length, area, and volume to determine the probability of continuous variables. In most typical probability questions, we find the probability by dividing the number of target outcomes by the total number of outcomes. However, when a variable is continuous, there is no distinct way to count the total number of outcomes (when does your bus arrive? 12:01.159 or 12:01.158?). Therefore, when this occurs, the best strategy is to mark boundaries on a geometric figure and find the length/area/volume that those boundaries encompass. This allows us to divide the size of our target set by the total set. In 1-dimensional Geometric Probability, we utilize length to determine the possible number of outcomes.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+<ol>
+<li>Given a random rational number between -3 and 3, what is the probability that it is closer to -1 than it is to 2?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>In this case, we want to define where a number is equidistant between -1 and 2, and find the percentage of numbers between that number and -3. In this case, the average of -1 and 2 is $\frac{1}{2}$, so all numbers between $\frac{1}{2}$ and $-3$ are closer to -1. This makes $\frac{3.5}{6} = \boxed{\frac{7}{12}}$.</li>
+</ol>
+</div>
+
+<p>However, most problems include more than 1 variable, making it necessary to count with area and volume.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>You have 2 concentric circles with radii of 2 and 5. What is the probability that, selecting any point on the circle, it lies within the inner circle?</li>
+<li>You and your friend are set to meet at a restaurant between 1:00 ± and 3:00 ± on the same day. When you arrive, you will wait for 20 minutes, and then leave. When your friend arrives, they will also wait for 20 minutes before leaving. What is the probability that you bump into your friend at the restaurant?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>This is directly a geometry problem, so we do not need to create a new diagram. Instead, we can just divide the area of the smaller circle by the area of the total circle. This becomes $\frac{4\pi}{25\pi} = \boxed{\frac{4}{25}}$.</li>
+<li>Transforming this into a diagram, we obtain a square with a central shaded region. Every coordinate in this shaded region works, as the x and y values are 20 apart on each of the lines. All areas outside of the central portion have x and y values that are more than 20 minutes apart, meaning that the two people will never meet. Therefore, instead of a complex calculation, we can instead find the area of the central portion, which, once simplified, can be expressed as $1-\left(\frac{5}{6}\right)^2 = \boxed{\frac{11}{36}}$.</li>
+</ol>
+</div>
+
+</div>

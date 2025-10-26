@@ -149,3 +149,5 @@ output_dat_Glen Crest.json
 output_dat_Hanci Team.json
 output_dat_Mary Ellen Henderson Middle School.json
 *.js
+
+!textbook-parser.js

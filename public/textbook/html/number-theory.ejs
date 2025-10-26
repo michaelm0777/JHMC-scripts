@@ -1,0 +1,617 @@
+<div id="content">
+<h1 id="intro-to-number-theory">Intro to Number Theory</h1>
+
+<h2 id="divisibility-rules">Divisibility Rules</h2>
+
+<h2 id="threes-nines">3s and 9s</h2>
+
+<p>A number is divisible by $3$ if and only if the sum of their digits is divisible by $3$. Likewise, a number is divisible by $9$ if and only if the sum of their digits is divisibile by $9$. Let’s see why this works. Let’s take a three digit number $abc$ where $a$, $b$, and $c$ all represent base $10$ digits. Now, let’s rewrite $abc$. $abc = 100a + 10b + c = 3(33a+3b) + a + b + c$.  Trivially, $3(33a+3b)$ is always divisible by $3$, so the only thing that determines divisibility by $3$ is $a+b+c$ - the sum of the digits. Similarly, we may also rewrite $abc$ as $9(11a+b) + a + b + c$. Again, $a+b+c$ is the only determining factor on whether $abc$ is divisible by $9$ or not. While our example was of a three digit number, these proofs may be extrapolated to any number of digits. Let</p>
+
+<p>$N = 10^na_n + 10^{n-1}a_{n-1} + \ldots + 10a_1 + a_0$.</p>
+
+<p>This may be rewritten as</p>
+
+<p>$N = 3(33\ldots3a_n + \ldots + 3a_1) + (a_n + a_{n-1} + \ldots + a_1 + a_0)$</p>
+
+<p>or</p>
+
+<p>$N = 9(11\ldots1a_n + \ldots + a_1) + (a_n + a_{n-1} + \ldots + a_1 + a_0)$</p>
+
+<p>Again, as we may see, $N$ is divisible by $3$ or $9$ if and only if the sum of the digits are divisible by $3$ or $9$.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Is $398$ divisible by $3$?</li>
+<li>Is $123456789$ divisible by $9$?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li>$\boxed{\text{No}}$</li>
+<li>$\boxed{\text{Yes}}$</li>
+</ol>
+</div>
+
+<h2 id="twos-powers">2s and powers of 2</h2>
+
+<p>A number is divisible by $2$ if and only if its units digit is divisible by $2$. In other words, the number must end in $0$, $2$, $4$, $6$, or $8$. All nonnegative numbers may be written of the form $10x+y$, where $x$ and $y$ are nonnegative integers. $10x$ will always be divisible by $2$ since $10$ is divisible by $2$, so $y$ is the only thing that matters here. This may be extrapolated to any power of $2$. For divisibility by $4$, numbers may be expressed in the form $100x + y$. Here, $y$ is either a two digit or a one digit number. Because $100$ is always divisible by $4$, $y$ is the only thing that matters. Any number is divisible by $2^n$ if and only if the last $n$ digits of the number are divisible by $2^n$.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Is $192$ divisible by $2$?</li>
+<li>Is $922$ divisible by $4$?</li>
+<li>Is $25829112$ divisible by $16$?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li>$\boxed{\text{Yes}}$</li>
+<li>$\boxed{\text{No}}$</li>
+<li>$\boxed{\text{Yes}}$</li>
+</ol>
+</div>
+
+<h2 id="elevens">11s</h2>
+
+<p>A number is divisible by $11$ if and only if its alternating sum is divisible by $11$. In other words, if you add up every other digit and subtract that from the other digits you just missed, that number must be divisibile by $11$. $121$ is divisibile by $11$ because $1-2+1 = 0$ which is divisible by $11$. To see why this works, let’s take a similar approach to our divisibility with $3$s and $9$s. Let’s examine a four digit number $abcd$. This may be rewritten as $1000a + 100b + 10c + d$. This is equal to $11(91a + 9a + c) + (-a+b-c+d)$. Again, the alternative sum is the only thing that matters. It may be helpful to note that $10^n$ is always $1$ less than or $1$ greater than a multiple of $11$ depending on whether $n$ is even or odd. You can learn more about this in our modular arithmetic section.</p>
+
+</div>
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Is $1747902585$ divisible by $11$?</li>
+<li>Is $98185123934$ divisible by $11$?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li>$\boxed{\text{Yes}}$</li>
+<li>$\boxed{\text{No}}$</li>
+</ol>
+</div>
+
+<h2 id="sevens">7s</h2>
+
+<p>A number is divisible by $7$ if and only if the difference between double the unit digit and the number formed by the rest of the digits is divisible by $7$. For example, $1001$ is divisible by $7$ as $100-2 = 98$ and $98 = 7(14)$. To prove this, let's let</p>
+
+<p>$N = 10^na_n + 10^{n-1}a_{n-1} + \ldots + 10a_1 + a_0 = 7m$.</p>
+
+<p>for some integer $m$.</p>
+
+<p>$7m = 10(10^{n-1}a_n + 10^{n-2}a_{n-1} + \ldots + a_1) + a_0$ </p>
+<p>$= 10(10^{n-1}a_n + 10^{n-2}a_{n-1} + \ldots + a_1) - 20a_0 + 20a_0 + a_0$</p>
+<p>$= 10(10^{n-1}a_n + 10^{n-2}a_{n-1} + \ldots + a_1 - 2a_0) + 21a_0$.$</p>
+<p>Now,</p>
+
+<p>$7m - 21a_0 = 10(10^{n-1}a_n + 10^{n-2}a_{n-1} + \ldots + a_1 - 2a_0)$.</p>
+
+<p>The left side is aways divisibile by $7$, meaning $10^{n-1}a_n + 10^{n-2}a_{n-1} + \ldots + a_1 - 2a_0$ must also be divisible by $7$.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Is $50805$ divisible by $7$?</li>
+<li>Is $4130$ divisible by $7$?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li>$\boxed{\text{No}}$</li>
+<li>$\boxed{\text{Yes}}$</li>
+</ol>
+</div>
+<h2>Primes and Composites</h2>
+
+<p>For our purposes, a prime number may be defined as a number with only $2$ divisors, $1$ and itself. A divisor may be defined as any number that evenly divides your original value without leaving any remainders. For example, $2$ is a divisor of $8$ because $8 = 2\cdot 4$. However, $2$ is not a divisor of $9$ because there does not exist a whole number $x$ such that $2x = 9$. Numbers that are not prime are called composite (aside from $1$). Some examples of primes are $2$, $3$, $5$, and $101$. Some examples of composites are $4$, $15$, and $1001$. There are an infinite number of primes in the natural numbers. $1$ is neither prime nor composite.</p>
+
+</div>
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>How many even primes exist?</li>
+<li>Is $6$ prime?</li>
+<li>If $p$ and $q$ are distinct primes, find the smallest possible $n$ such that $n = pq+p+q$.</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li>There is only $\boxed{1}$ even prime. For all other even numbers, $2$ is also a divisor. Thus, there are at least $3$ divisors for such a number, meaning it cannot be prime.</li>
+<li>$\boxed{\text{No}}$, $6$ is not prime because it has divisors $2$ and $3$.</li>
+<li>This is simply a matter of finding the $2$ smallest primes, which happen to be $2$ and $3$. Substitute these values in to get $\boxed{11}$.</li>
+</ol>
+</div>
+
+<h2>Prime factorization</h2>
+
+<p>All numbers greater than $1$ are either a prime number or a product of prime numbers. The resulting product of primes is known as the number’s prime factorization. This statement is half of the Fundamental Theorem of Algebra (the other half is that each number has a unique prime factorization). To see why this is, let’s take a look at a composite number $n$. Let’s use strong induction and assume that all numbers greater than $1$ and less than $n$ are either prime or a product of primes. Because $n$ is composite, it may be written as a product of $2$ numbers $a\cdot b$ such that $a$ and $b$ are between $1$ and $n$ not inclusive. Because $a$ and $b$ are between $1$ and $n$, they are either prime or the product of primes. Thus, the product of $a$ and $b$ must also be a product of primes. Thus, composite number $n$ must be a product of primes. We have thus shown that any composite $n$ may be expressed as the product of primes.</p>
+<p>Let’s try to find the prime factorization of $60$. To do so, let’s try finding some divisors. We know that $60 = 2\cdot 30$, and $2$ is prime, so let’s just leave that aside and look at $30$. $30 = 2\cdot 15$, and again, let’s set $2$ since it’s prime and look at $15$. $15 = 3\cdot 5$. Both of these numbers are prime, so we’re now done. If we look at the numbers we’ve set aside, we have two $2$s, one $3$, and one $5$. Thus, $60$ may be rewritten as $\boxed{2^2\cdot 3 \cdot 5}$.</p>
+
+</div>
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Find the prime factorization of $18$</li>
+<li>Find the prime factorization of $90$</li>
+<li>Find the prime factorization of $999$</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li>$18 = 6 \cdot 3 = 2 \cdot 3 \cdot 3$ so $18 = \boxed{2^1 \cdot 3^2}$</li>
+<li>$90 = 9\cdot 10 = 3 \cdot 3 \cdot 2 \cdot 5 = \boxed{2^1 \cdot 3^2 \cdot 5}$</li>
+<li>$999 = 9 \cdot 111 = 3 \cdot 3 \cdot 3 \cdot 37 = \boxed{3^3 \cdot 37}$</li>
+</ol>
+</div>
+
+<h2>Divisor Tricks</h2>
+
+<p>As we learned in our prime factorization section, a divisor is simply a number that is able to evenly divide our original value. $2$ is a divsor of $6$ but not $9$. This section will be dedicated to a few common tricks seen in divisor problems. Oftentimes, you’ll be asked to find the number of divisors that a certain number has. We do this by taking the prime factorization of a number, adding $1$ to each exponent, and multiplying the modified exponents together. For example, the prime factorization of $18$ is $2^1 \cdot 3^2$, so $18$ has $(1+1)(2+1) = 6$ divisors in total. If we list them out, we have $1, 2, 3, 6, 9, 18$. To see why this works, let’s look at the following expression. $(2^0 + 2^1)(3^0 + 3^1 + 3^2)$. If we expand this, each resulting term will be the product of a value from the powers of $2$ and a value from the powers of $3$. As you may see, each product is always unique. Because each product is unique, this is an effective way of counting all divisors. Multiply $2^0$ by each of the three values on the right, and repeat the process for $2^1$.</p>
+<p>Sometimes, you’ll also be asked to find the product of all divisors of a number. This may seem daunting at first, especially when given a large number, but it’s actually intuitively very easy. Let’s take a number $n$ with prime factorization $p_n^{a_n}p_{n-1}^{a_{n-1}} … p_0^{a_0}$. Let’s call the number of divisors $m$. Notice that for all divisors present (except for $\sqrt{n}$ if it’s an integer), there exists a unique corresponding divisor that, when multiplied with your original divisor, produces $n$. In other words, each divisor has another divisor that it pairs up with to produce your original number. If we look at $18$, we have $(1, 18), (2, 9), (3, 6)$. Thus, we just take our original number $n$ to the power of the number of divisors divided by $2$. So the product of all the divisors of $n$ is $n^{\frac{m}{2}}$ where $m$ is the number of divisors of $n$. For $18$, we have $6$ total divisors, so the product of all the divisors of $18$ is $18^3$.</p>
+
+</div>
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>How many divisors does $60$ have?</li>
+<li>How many divisors does $16$ have?</li>
+<li>What number less than $100$ has the greatest number of divisors?</li>
+<li>Find the product of the divisors of $60$</li>
+<li>Find the product of the divisors of $16$</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<p>$60 = 2^2 \cdot 3^1 \cdot 5^1$, so we have $3 \cdot 2 \cdot 2 = \boxed{12}$ divisors.</p>
+<p>$16 = 2^4$, so we have $\boxed{5}$ divisors.</p>
+<p>We know that $60$ already has $12$ divisors, so lets see if we are able to find a number with more divisors. $13$ divisors is unrealistic because we would need a prime to the power of $12$. $14$ divisors again doesn’t work because we need a prime to the power of $6$ and another prime to the power of $1$. $15$ divisors doesn’t work either because the lowest possible number is $2^4 \cdot 3^2 = 144$. If we continue along this path, we may see that no other numbers work because the products keep becoming larger. Thus, our answer is $60$.</p>
+<p>We know there are $12$ divisors of $60$, so our answer is $60^6$.</p>
+<p>There are $5$ divisors here, so our answer is $16^{2.5}$. Note here that the number of divisors we have is odd. This happens when there exists a perfect square. Dividing this number by $2$ will result in a decimal ending in 0.5, but this is fine because our original number is a perfect square anyways.</p>
+
+</div>
+<h2 id="gcd">GCD</h2>
+<p>When we’re given $2$ numbers $a$ and $b$, we’re sometimes asked to find the gcd - the greatest common divisor - of the two numbers. As the name suggests, we want to find the greatest integer $n$ such that $n$ is a divisor of both $a$ and $b$. The gcd of $12$ and $18$ is $6$ because $6$ is the largest integer that divisides both numbers here. Generally, finding the gcd of two numbers may be represented as gcd($a$, $b$). One strategy to find the gcd of two numbers is to take the prime factorization of both numbers. The gcd will be the product of the factors that they both have. The prime factorization of $12$ is $2^2 \cdot 3^1$ and the prime factorization of $18$ is $2^1 \cdot 3^2$. Both of these share one $2$ and one $3$, and $2 \cdot 3 = 6$.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Evaluate gcd($45$, $30$)</li>
+<li>Evaluate gcd($262$, $13$)</li>
+<li>Evaluate gcd($10$, $10$)</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li>$\boxed{15}$</li>
+<li>$\boxed{1}$</li>
+<li>$\boxed{10}$</li>
+</ol>
+</div>
+
+<h2>LCM / Common Multiples</h2>
+
+<p>When given two numbers, $a$ and $b$, one common thing you'll be asked to do is to find the lowest common multiple of the two numbers. As the name suggests, this is the least positive number such that both $a$ and $b$ are divisors. The most common way to find the LCM is to multiply the shared divisors with the unique divisors in the two prime factorizations. For example, if we look at $12$ and $18$, we have $12 = 2^2 \cdot 3^1$ and $18 = 2^1 \cdot 3^2$. The shared divisors are one $2$ and one $3$, and the divisors left out are a $2$ from the $12$ and a $3$ from the $18$. Thus, the lowest common multiple is $2\cdot 3\cdot 2 \cdot 3 = 36$. An interesting relationship between the LCM and the GCD is that, when multiplied together, they produce the product of your original numbers.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Find the lcm of $24$ and $10$</li>
+<li>Find the lcm of $5$ and $7$</li>
+<li>If the product of $2$ numbers is $2500$ and the gcd is $25$, what is the lcm of the two numbers?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li>$\boxed{120}$</li>
+<li>$\boxed{35}$</li>
+<li>The product is equal to lcm $\cdot$ gcd, so the lcm $= 2500/25 = \boxed{100}$.</li>
+</ol>
+</div>
+
+<h2>Euclidean Algorithm</h2>
+
+<p>There exists a method for finding the gcd of two numbers known as the euclidean algorithm that is faster than traditional prime factorization. Say you have two numbers, $a_0$ and $b_0$. Without loss of generality, say $a_0  > b_0$. We subtract multiples of $b_0$ from $a_0$ until our result is less than $b$. Call this new term $a_1$. Now, repeat the process for $a_1$ and $b$, by subtracting $a_1$ from $b$ until you no longer can. This process will go on until you reach two numbers where one of them is a multiple of the other. This number is your greatest common divisor. Let’s examine the process for $40$ and $24$. $40 - 24 = 16$. Now, $24$. $24-16 = 8$. $8$ is a multiple of $16$, so we’ve found the gcd of $40$ and $24$ is $8$.</p>
+
+</div>
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Find the gcd of $12398$ and $4111$.</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li>$12398 - 3\cdot 4111 = 65$. $4111 - 63 \cdot 65 = 16$. $65 - 4\cdot 16 = 1$. Thus, we have determined that the gcd of these two numbers is $\boxed{1}$.</li>
+</ol>
+</div>
+
+
+<h2>Palindromes</h2>
+
+<p>A palindrome is an integer that reads the same forward and backward. For example, 1234321 is a palindrome. They have usages in cryptography and computer science.</p>
+
+<h2>Rational and Irrational Numbers</h2>
+
+<p>Rational and irrational numbers are the two subsets of the real numbers. Rational numbers can be expressed as the ratio of two integers, while irrational numbers cannot. Specifically, irrational numbers cannot be expressed as $\frac{p}{q}$, where $p$ and $q$ are relatively prime integers. Meanwhile, all rational numbers can be expressed as $\frac{p}{q}$. Rational numbers have decimal sequences that terminate or repeat, while irrational numbers lack this quality: $\pi$ is a famous example of an irrational number.</p>
+
+<h4>Rules of Irrational Numbers</h4>
+
+<p>1. $\sqrt{x}$ is irrational for all $x$ unless $x$ is a perfect square.</p>
+<p>2. The sum of an irrational number and a rational number is irrational.</p>
+<p>3. Multiplying any irrational number with a rational number results in an irrational number.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Is the length of the hypotenuse for a right triangle with legs of length $2$ and $7$ rational or irrational?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li>Using the pythagorean theorem, $2^2+7^2 = 53$. Since $53$ is not a perfect square, $\sqrt{53}$ is $\boxed{\text{irrational}}$.</li>
+</ol>
+</div>
+
+<h2>Base arithmetic</h2>
+
+<h3>Addition/Subtraction</h3>
+<p>We can set up addition in different number bases the same as we do in base 10. Instead of carrying the $1$ after reaching $10$, we carry the remainder after exceeding the number of the base. For example, if we want to calculate $155_{6} + 34_{6}$, we first add $5+4$, carry the $1$, and get $3$. Then, $1+5+3 = 8$, and carrying the one, we get $2$. Then, $1+1 = 2$. Therefore, $155_{6} + 34_{6} = 223_{6}$.</p>
+
+<p>Subtraction works similarly, setting it up the same way. Given $41_{6} - 24_{6}$, we can calculate by setting it up the standard way. Since 1 is less than 4, we have to carry a $1$ from the 4, and get $(11-4)_{6}$, which is $3$. Then, $3-2 = 1$. Therefore, $41 - 24 = 13$ in base $6$.</p>
+<h3>Multiplication</h3>
+<p>Base multiplications works just as it would in base 10, except you simply carry the 1 each time you exceed the base.</p>
+<p>Example: $24_{5} \cdot 3_{5}$: Multiply $4 \cdot 3 = 13$ in base 5, $12 = 22_{5}$, so write $2$ and cary $2$. Continuing on, treat this as an exercise to yield $132_{5}$</p>
+<h3>Division/Divisibility</h3>
+<p>Division and divisibility also the same way as in base 10, with repeated subtraction or long division. It is often times more fruitful to explain and demonstrate this with examples rather than with words, so let’s try it with:</p>
+<p>$234_{6} \div 3_{6}$, in base 10</p>
+<h4>Converting between bases</h4>
+<p>The easiest way to do this is to convert from some base to base 10, then to another base that’s intended, which is written prior.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Convert $65_{6}$ to base $9$</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li>To convert $65_{6}$ to base $9$, we first convert it to base $10$. We have $6^1 \cdot 6 + 5 \cdot 1 = 36 + 5 = 41$. Now, we convert $41_{10}$ to base $9$. Dividing $41$ by $9$, we get $41 \div 9 = 4$ remainder $5$. Thus, $\boxed{41_{10} = 45_{9}}$.</li>
+</ol>
+</div>
+
+<h3>Decimals and fractions</h3>
+<p>To convert fractions to another base, multiply the fractional (decimal) part repeatedly by the base intended. Also think about every number to the right of the decimal point as a fractional value, just as the unit’s place would have power $0$, the first value to the right of the decimal point would have power $-1$ and so on.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Convert $0.25_{10}$ to base 2.</li>
+<li>Convert $0.36_{9}$ to base 5.</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li>To convert $0.25_{10}$ to base $2$, we can multiply the fractional part by $2$ repeatedly. We have $0.25 \cdot 2 = 0.5$, so the first digit is $0$. Next, we take $0.5 \cdot 2 = 1.0$, so the second digit is $1$. Therefore, $\boxed{0.25_{10} = 0.01_{2}}$.</li>
+<li>To convert $0.36_{9}$ to base $5$, we can multiply the fractional part by $5$ repeatedly. We have $0.36 \cdot 5 = 1.8$, so the first digit is $1$. Next, we take $0.8 \cdot 5 = 4.0$, so the second digit is $4$. Therefore, $\boxed{0.36_{9} = 0.14_{5}}$.</li>
+</ol>
+</div>
+
+<h2>Modular Arithmetic and Congruences</h2>
+<h3>Congruence + Residues</h3>
+
+<p>We can think of modular arithmetic as the quotient and remainder after division. For example, given 53 if we wanted to express it’s congruence mod $6$, $53 \equiv 5 mod 6$ because the remainder when 53 is divided by 6 is equal to $5$. 53 is also congruent to $11 mod 6$, because the remainder when 11 is divided by 6 is also 5.</p>
+
+<h4>Congruence</h4>
+
+<p>Two integers are congruent modulo $n$ when their residues are identical when divided by $n$</p>
+
+<h4>Residues</h4>
+
+<p>A residue is the remainder. For example, in the expression $51 \equiv 1 mod 2$, $1$ would be the residue.</p>
+<h4>Addition / Subtraction</h4>
+
+<p>Firstly, addition adheres to several rules when it comes to modular arithmetic.</p>
+<p>If a + b = c, then $a \equiv n + b\equiv n = c \equiv n$.</p>
+<p>If $a = b$, then $a + k$ mod $n \equiv b + k$ mod $n$.</p>
+<p>If $a \equiv b$ (mod $N$), then $-a \equiv b$ (mod $N$).</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>It is currently 5 AM. Using modular arithmetic, what time will it be in 1000 hours on a 12-hour clock?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li>We have that $1000 \equiv 4 \mod 12$. Therefore, we add 4 hours to 5 AM and get $\boxed{\text{9 AM}}$.</li>
+</ol>
+</div>
+
+<p>Next, subtraction involves using our third rule more. We can think of it as adding a negative integer instead of subtracting, and therefore follows the same rules as addition.</p>
+
+<h4>Multiplication / Exponentiation</h4>
+
+<p>Multiplication in modular arithmetic follows a couple of rules-</p>
+<p>1. If $a * b = c$, then $a \pmod{N} * b \pmod{N} \equiv c \pmod{N}$</p>
+<p>2. If $a \equiv b \pmod{N}$, then $ka \equiv kb \pmod{N}$</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>What is the remainder when $8*20$ is divided by $3$?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li>This is equivalent to $(8*20)\mod 3$. Therefore, we can use our first rule. This gives us $8 \mod 3 = 2 * 20 \mod 3 = 2 = c \mod 3$. Therefore, we have $c = 4 \mod 3$ or that the remainder is $\boxed{1}$.</li>
+</ol>
+</div>
+
+<h4>Exponentiation</h4>
+
+<p>Exponentiation is equal to repeated multiplication, so we have the property of exponentiation:</p>
+
+<p>Given that $a \equiv b \pmod{N}$, then $a^k \equiv b^k \pmod{N}$.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>What is the remainder when $5^{22}$ is divided by 8?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li>Using this property, we have that $5^2  = 25 \equiv 1 \pmod{8}$. Therefore, we have that $5^{22} = {5^2}^{11} \equiv (1 \pmod{8})^{11} \equiv \boxed{1} \pmod{8}$.</li>
+</ol>
+</div>
+
+<h2>Linear Congruences</h2>
+
+<h4>Modular Inverses</h4>
+<p>A modular inverse is a number $a$ such that $ax\equiv 1\pmod{n}$. You can check if an inverse exists if $\gcd(a,n)=1$. Additionally the multiplicative inverse is unique. Consider two inverses $b,b'$ of $a$ with respect to $m$. Then, $ab\equiv ab'\equiv 1\pmod{m}\Rightarrow a(b-b')\equiv  0\pmod{m}$. $a\neq0$ or else it won't have an inverse so $b-b'=0\Rightarrow b=b'$. The multiplicative inverse is also denoted $x\equiv a^{-1}\pmod{n}$.</p>
+<p>What is the solution of $3x\equiv 4\pmod{5}$?</p>
+
+<h4>Solving Linear Congruences</h4>
+<p>A linear congruence is an equation in the form $ax\equiv b \pmod{n}$. When solving, we search for a solution $x$ such that $n\mid ax-b$. This is equivalent to finding all solutions of the linear diophantine equation $ax-ny=b$.</p>
+<p>What is the solution to $3x\equiv 4\pmod{5}$?</p>
+
+<h4>Units digit</h4>
+<p>When applying the modulus system, modulo ten provides us with only the unit digits. This means that it is practical to take modulo ten to solve for the units digit. Alternatively, when dealing with exponents, find the repeating pattern. For example, when 2 is exponentiated, the units digit becomes 2, 4, 8, 6, 2. Essentially, the units digit of $2^5$ is the same as $2^1$. We can then deduce that the units digit of $2^n$ and $2^{n+4k}$ is identical. So, if we are asked what the units digit of $2^{347}$ is, we know it is congruent to $2^3$ or 8.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Let $k=2^{2008}+2008^2$. Find the units digit of $2^k+k^2$  (AMC 10/12 2008).</li>
+<li>Verify that in fact that $k=0 \pmod{4}$.</li>
+<li>What is the units digit of $2137^{753}$?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li>We take mod 10 and simplify. This becomes $k=2^8+8^2 \pmod{10}$. From our digit cycle of 2, we can find that $k = 6+4=0 \pmod{10}$. Thus, $k^2 = 0 \pmod{10}$. Since $k=0 \pmod{4}$ (why?), $2^k = 2^4 = 6 \pmod{10}$. If we add these two, the units digit is $\boxed{6}$.</li>
+<li>$\boxed{\text{(Exercise for reader)}}$</li>
+<li>Check the digit cycle of 7, which has length 4 (like the cycle of 2). Conduct the same approach as we did before, and find that it will result in $7^1 = \boxed{7}$.</li>
+</ol>
+</div>
+
+<p>An infinite number of problems can be created and solved in this manner.</p>
+
+<h2>CRT</h2>
+<p>CRT primarily deals with solving systems with multiple congruences. The reason behind this is that it says if $x=y \mod{mn}$, $x=y \mod{m}$ and $x=y \mod{n}$. This is useful because it allows us to split up a modular congruence into smaller pieces. In practical applications, we can find a system of modular congruences which can be combined into one larger equation.</p>
+<p>CRT also gives us the solution to two modular congruences easily as</p>
+\begin{align*} &n \equiv r_1 \pmod{m_1}, \quad n \equiv r_2 \pmod{m_2}, \quad (m_1, m_2) = 1 \\ &\text{Find } k_1 \text{ and } k_2 \text{ such that } k_1 m_1 \equiv 1 \pmod{m_2}, \quad k_2 m_2 \equiv 1 \pmod{m_1} \\ &\text{Then } n \equiv k_2 m_2 r_1 + k_1 m_1 r_2 \pmod{m_1 m_2} \end{align*}
+<p>For example, we may encounter the problem of finding the last two digits of a number (usually exponentiated). In this case, we would like to take the number mod 100. However, since 100 is such a large modulus, we are unlikely to find enough information to directly solve the equation. However, if we take it mod 4 and mod 25, it can be combined into mod 100. For example, if we have that $n = 0 \mod{4}, 12 \mod{25}$, using our formula we can easily find n = $19*4*12 +1*25*0=-288=12 \mod{100}$, or by solving the congruence equation $n = 25x+12$ and substituting $25x+12 = 0 \mod{4}$, we can get $x = 0 \mod{4}$. This is equivalent to x =4j, and substituting we get $n=100j+12$. This implies that n mod 100 is 12.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>What are the last two digits of $7^{222}$?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li>We use mod $4$ and $25$ to decompose the last 2 digits which would be mod $100$. First, $7 \equiv -1 \pmod{4}$ so $7^{222} \equiv (-1)^{222} \equiv 1 \pmod{4}$, and $7^2=49 \equiv -1 \pmod{25}$ so $7^{222}=(7^2)^{111} \equiv (-1)^{111} \equiv -1 \equiv 24 \pmod{25}$. Thus we have $n \equiv 1 \pmod{4}, \; n \equiv 24 \pmod{25}$. Writing $n=25x+24$ and substituting gives $25x+24 \equiv 1 \pmod{4} \Rightarrow x \equiv 1 \pmod{4} \Rightarrow x=4j+1$, so $n=25(4j+1)+24=100j+49$. This implies $n \equiv 49 \pmod{100}$, so the last two digits are $\boxed{49}$.</li>
+</ol>
+</div>
+
+
+
+
+<h2>Fermat's Little Theorem</h2>
+<p>Fermat’s little theorem says that for any prime $p$ and any integer $a$, $a^p - a$ is a multiple of $p$. Alternatively, $a^p \equiv a \pmod{p}$. If $a$ and $p$ are coprime, this implies that $a^{p-1} \equiv 1 \pmod{p}$. Fermat’s theorem is particularly useful in simplifying large modular congruences. For example, we can use Fermat’s theorem to simplify $7^{2017} \pmod{11}$. First, we apply Fermat’s theorem in the form with one. This means that $7^{10} \equiv 1 \pmod{11}$. Then, if we exponentiate each side, any multiple of $10$ is also congruent to $1$. Thus, $7^{2017} \equiv 7^7 \pmod{11}$. From here, set $7 \equiv -4 \pmod{11}$, yielding $(-4)^7 \pmod{11}$, which can be computed to $(-4)^7 \equiv 6 \pmod{11}$.</p>
+
+<p>It is an effective exercise to set any arbitrary power modulo any prime and evaluate. Wolfram Alpha can calculate the result to check your work.</p>
+
+<p>For example:</p>
+<p>$3^{31} \pmod{7}, \quad 29^{25} \pmod{11}, \quad 128^{129} \pmod{17}$</p>
+
+<p>Working $29^{25} \pmod{11}$ simplifies to $(-4)^{25} \pmod{11}$, and since $(-4)^{10} \equiv 1 \pmod{11}$, we have $(-4)^5 \equiv -1024 \equiv -1 \pmod{11}$.</p>
+<h2>Totient Function + Extension to Fermat’s</h2>
+<p>Euler’s totient function is defined as the number of coprime numbers to a number n. This function is usually denoted as phi or $\Phi (n)$. For low values of n, we can directly compute. For example, $\Phi (9) = 6$ since 3, 6, and 9 are coprime to 9. We note particularly that for n is a prime, the phi function returns n-1; since the only non coprime number to n is itself. For higher values of n, we resort to Euler’s product formula. In particular, the value is n times (1-1/p), where p is every prime factor of n. We can use this to extend Fermat’s little theorem such that $a^{\Phi(n)-1}=1 \mod{n}$ even when n is not prime.</p>
+<p>If $1 \le n \le 1000$, what value of n minimizes $\Phi {n}/n$?</p>
+<p>Use the formula of the phi function. Then this simplifies to (1-1/p) for all prime factors of n. To minimize this, we note that each term is minimized when p is as small as possible. Thus, when p is 2, it is the minimum for one prime factor. But if there are more factors, we want to extend it as far as possible. This means $n$ is $k!$, and $n \le 1000$ means n is 720 or 6!.</p>
+<h2>Wilson’s Theorem</h2>
+<p>Wilson’s theorem consists of a bidirectional statement. $(p-1)!=-1 \mod{p}$ if and only if p is a prime number. The proof of this theorem is vastly beyond the scope of elementary number theory. In practice, Wilson’s theorem is most effective when dealing with factorials in modular congruences. It can be used both to simplify factorials as well as to prove a number to be prime. For example, take 30! Mod 899. By factoring the difference of perfect squares, we get factors of 29 and 31. Since both are prime, we want to use CRT to combine the linear congruence. Firstly, 30! Is obviously divisible by 29. Then, using Wilson’s theorem, $(31-1)! =-1 \mod{31}$ which can then be combined to be 464 mod 899.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Find all prime numbers p such that $(p-2)! \equiv 1 \pmod{p}$.</li>
+<li>Determine all primes p for which $(p-3)! \equiv 2 \pmod{p}$.</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li>$\boxed{\text{All primes p satisfy this}}$ since $(p-2)! \equiv (p-1)(p-2)(p-3)! \equiv (-1)(-2)(p-3)! \equiv 2(p-3)! \equiv -1 \pmod{p}$.</li>
+<li>Recall $(p-1)! \equiv -1\pmod{p}$, then we can see trivially that $(p-1)! \equiv (p-1)(p-2)(p-3)!$ So after applying the modulo $p$ we yield this result: $(p-1)! \equiv (-1)(-2)(p-3)! \pmod{p}$, so with using wilson's we get $2(p-3)! \equiv -1 \pmod{p}$, sub this back into the initial condition, yielding $2 \cdot 2 \equiv -1 \pmod{p} \rightarrow 4 \equiv -1 \pmod{p}$, thus trivially notice $\boxed{p=5}$ is the only prime that works.</li>
+</ol>
+</div>
+
+<h2>Diophantine Equations</h2>
+<p>Diophantine equations are generally equations of form ax+by=c. We seek integer solutions for x, y. Firstly, we must confirm that c is divisible by the gcd(a,b)=d (why?). Once one solution is found, all solutions are of form $(x_0+ k\frac{b}{d}, y_0-k\frac{a}{d}. The easiest way to find solutions in complicated equations is the Euclidian algorithm, but inspection can often work as well. For example, take 2x+3y=5. By inspection, x=y=1 is easy to find. Since 2 and 3 are coprime, d = 1. Then, the solutions are formed (1+3k,1-2k). Trying some other solutions (4,-1) should convince us of the truth.</p>
+<p>Verify the general solution by plugging it into the diophantine equation.</p>
+<p>Verify why c is divisible by gcd(a,b).</p>
+<p>Solve the equation $15x+21y=63$ for integer solutions x and y.</p>
+<p>Factor this expression into 5x+7y=9. Then, we can inspect the solution (-1,2). The solution to this is now (-1+7k,2-5k).</p>
+<p>Determine if there are any integer solutions to $1001x+1430y=1$, and solve for one if there is one.</p>
+
+<h2>Lifting the Exponent Lemma</h2>
+<p>Before the lemma is introduced, we must create some definitions. First, we will consider prime factorization. It is commonly known that any whole number $n$ can be expressed as</p>
+$
+j = p_1^{k_1} \cdot p_2^{k_2} \cdot  p_3^{k_3}\cdot  \dots \cdot  p_n^{k_n}
+$
+<p>where the sequence $p_n$ is the prime factors of $n$, and the sequence $k_n$ the powers of the prime factors. When we work with prime factorization, we have divisibility rules and the modulus system to be able to determine the sequence $p_n$, but for this lemma we will work with $k_n$. With this in mind, we will define a new function $v_p(j)$ such that the following statements are equivalent.</p>
+$
+v_{p_n}(j) = k_n \iff p^k | j\text{ and } p^{k+1} \nmid j
+$
+<p>Please note that $p_n$ denotes a prime number. If we look at what this definition means, we can see that it is simply the value of the exponent of the prime $p_n$. To break this down more exactly, we can see that the right side of the bidirectional arrow really just says that $k_n$ is the largest number that still makes $p^k$ divide n. As an example, if we consider $24$, we can see that $p_2(24) = 3$, and also that $p_3(24)=1$. This is obvious because $8$ divides $24$, but $16$ does not divide $24$. Similarly, $3$ divides $24$, but $9$ does not. Now with this down, we can move onto the actual lemma.</p>
+<p>Now, more generally. Let $p$ be a prime, $x$ and $y$ integers, $n$ a positive integer, and suppose that $p |x-y $ but that $p\nmid x$ and $p\nmid y$. Then if p is not $2$,</p>
+$
+v_p(x^n-y^n) = v_p(x-y)+v_p(n)
+$
+<p>If p is $2$ and $n$ is even, then:</p>
+$
+v_2(x^n-y^n) = v_2(x-y) + v_2(n)+v_2(x+y)-1
+$
+<p>If $n$ is odd, v_2(x^n-y^n) = v_2(x-y)</p>
+<p>We can also provide a useful extension. If $n$ is an odd integer, then we can substitute $y = -y$ to obtain:</p>
+$
+v_p(x^n+y^n) = v_p(x+y)+v_p(n)
+$
+<p>These four provide the general basis to work with all primes, and now we proceed with a proof.</p>
+<p>We take the case where $p$ is odd, with the understanding that when $p=2$ the proof is similar. Firstly, we will seek to prove the following:</p>
+$
+v_p(x^p-y^p)=v_p(x-y)+1
+$
+<p>Although this seems very abstract, we will inevitably use induction to solve this. We will factor out $x-y$.</p>
+$
+x^p-y^p = (x-y)(x^{p-1}+yx^{p-2}+y^2x^{p-3} +\dots +xy^{p-2}+y^{p-1})
+$
+<p>Now we will apply our function $v_p$ on the above equation. Note specifically that similar to the Law Of Exponents (you add the exponents with the same base), multiplication of $(x-y)$ of the right part when taken under the function $v_p$ is converted to the sum of both parts under the function. Now we are halfway there, and we only need to find that the right term of the equation is equal to one to satisfy the initial claim.</p>
+$
+v_p(x^p-y^p)=v_p(x-y)+v_p(x^{p-1}+yx^{p-2}+y^2x^{p-3} +\dots +xy^{p-2}+y^{p-1})
+$
+<p>In order to find this right hand side equal to 1, we will use the definition of $v_p$, namely that it is divisible by $p$ and not $p^2$. This is because to get $v_p(j) = 1$, $p |j$ and $p^2 \nmid j$.</p>
+<p>To remove $y$, we use the condition $p|x-y$, which can be rearranged in modulus terms as $x-y = 0 \pmod{p}$ or $x \equiv y \pmod{p}$ which further can be written to say $y = x+pk$ for some integer $k$.  To substitute each individual term we will denote $n$ as the $n$th term of the sequence, taking modulus $p^2$ to remove terms that will not change our stated goal above. Then,</p>
+$
+x^{p-1}y^n= x^{p-1-n}(x+kp)^n = x^{p-1-n}(x^n+n(kp)x^{n-1}+\frac{n(n-1)}{2}(kp)^2x^{n-2} \dots)
+$
+$
+= x^{p-1}+ n(kp)x^{p-2} \pmod{p^2}
+$
+<p>This can now be applied to our other equation, giving:</p>
+$
+x^{p-1}+yx^{p-2}+y^2x^{p-3} +\dots +xy^{p-2}+y^{p-1} =
+$
+$
+x^{p-1} + (x^{p-1} + kpx^{p-2})+(x^{p-1} + 2kpx^{p-2})+ \dots + (x^{p-1} + (p-2)kpx^{p-2})+(x^{p-1} + (p-1)kpx^{p-2}) =
+$
+$
+px^{p-1}+(1+2+3+\dots+p-2+p-1)kpx^{p-2} = px^{p-1}+\frac{p(p-1)}{2}kpx^{p-2} =
+$
+$
+px^{p-1} \pmod{p^2}
+$
+<p>From here, it is clear that our polynomial is divisible by $p$ and not $p^2$, which proves our initial claim. Lets restate the original problem and continue.</p>
+$
+v_p(x^n-y^n) = v_p(x-y)+v_p(n)
+$
+<p>Define $n$ as $p^ab$, where $p, b$ are coprime. We can write:</p>
+<p>$v_p(x^n - y^n)$</p>
+<p>$v_p\!\big((x^{p^k})^a - (y^{p^k})^a\big)$</p>
+<p>$v_p(x^{p^k} - y^{p^k})$</p>
+<p>$v_p\!\big((x^{p^{k-1}})^p - (y^{p^{k-1}})^p\big)$</p>
+
+<p>Which applying our proved statement will follow naturally:</p>
+$
+=v_p(x^{p^{k-1}}-y^{p^{k-1}})+1
+$
+<p>Eventually, by repeating that process we will eventually now obtain</p>
+$
+v_p(x-y)+k = v_p(x-y)+v_p(n)
+$
+<p>This lemma does show up often on competition math sets. For example, in 2022 this problem showed up. Most people solved alternatively, but the LTE Lemma makes this problem trivial.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Problem 17, AMC 10B 2022: One of the following numbers is not divisible by any prime number less than $10.$ Which is it? (A) $2^{606}-1$ (B) $2^{606}+1$ (C) $2^{607}-1$ (D) $2^{607}+1$ (E) $2^{607}+3^{607}$</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+
+<ol>
+<li> Proceed down each answer choice and apply LTE Lemma to each. For (A) $v_p(2^{606}-1) = v_p(2-1) +v_p(606)$. Clearly, we can see that when $p=3$, $v_p = 1$ which implies that (A) is divisible by $3$. For (B). We firstly note that we cannot apply the addition form of the LTE Lemma in this state, since 606 is not odd. Conveniently, we can write it like this. $v_p(2^{606}+1) = v_p(4^{303}+1) = v_p(4+1) + v_p(303)$. By squaring the $2$, we eliminate the even number and can see easily that (B) is divisible by 5. For (D), we can directly apply the lemma. $v_p(2^{607}+1) = v_p(2+1) + v_p(607)$ which means (D) is divisible by 3. Finally, (E). $v_p(2^{607}+3^{607}) = v_p(2+3) +v_p(607)$ which clearly denotes divisibility by 5. By elimination, we find the answer is $\boxed{C}$. For reference, we can also show this by using the lemma on C. $v_p(2^{607}-1) = v_p(2-1) +v_p(607)$ which since 1 and 607 are not divisible by a prime number, no prime divides C.</li>
+</ol>
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+

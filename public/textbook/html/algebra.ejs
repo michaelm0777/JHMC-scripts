@@ -1,0 +1,539 @@
+<div id="content">
+<h1>Introduction to Algebra</h1>
+
+<p>Out of all 4 categories of competition math, middle schoolers likely have the most experience with algebra. Algebra is a branch of mathematics that uses symbols such as <em>x</em> or <em>y</em> to represent unknown variables or changing systems. While relatively simple, it lays the foundation for tons of higher-level fields such as calculus, cryptography, topology, etc. Algebra in a sense may be considered the most fundamental of our 4 categories, as most problems in the other 3 books will likely use some facet of algebra to a certain extent.</p>
+
+<h2 id="linear-equations">Linear Equations</h2>
+<h2 id="what-is-a-linear-equation-one-variable-linear-equations">What is a Linear Equation + One Variable Linear Equations</h2>
+<p>Sometimes, we want to find the value of something, so we produce equations with variables to represent–and ultimately determine–a numerical value. For example, if we say Max the fruit merchant has three apples that are worth $\$6$ altogether, and we want to find the value of just one apple, we can represent it as $3x = 6$. We've chosen a variable, $x$, to represent the value of what we're trying to find: the price of a pair of glasses. To solve for $x$, we may divide both sides by $3$ to reach the equation $x = 2$. Thus, we have deduced that one apple costs $\boxed{\$2}$.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<p>For all of the following equations, solve for $x$.</p>
+
+<ol>
+<li>5x = 120</li>
+<li>2x+7 = 4x+5</li>
+<li>3x+18 = 9x+6</li>
+<li>17x+3 = 34x + 6</li>
+<li>4x+2 = 4x+3</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>Divide both sides of the equation by $5$ to get $\boxed{24}$</li>
+<li>Subtract $2x$ from both sides to isolate $x$ on one side of the equation. Now, we're left with $7 = 2x + 5$. Now, subtract $5$ from both sides to get $2 = 2x$. Finally, divide both sides by $2$ to get $x = \boxed{1}$.</li>
+<li>Subtract $3x$ and $6$ from both sides to get $6x = 12$. Thus, $x = \boxed{2}$.</li>
+<li>Notice that the left side of the equation is a multiple of the right side of the equation. This means that there are $\boxed{\infty}$ solutions.</li>
+<li>Subtracting $4x$ from both sides, we get that $2=3$ which is obviously not true. Thus, there are $\boxed{0}$ solutions.</li>
+</ol>
+</div>
+<h2 id="graphing-2-variable-equations">Graphing + 2 variable equations.</h2>
+<p>Oftentimes, we represent simple relationships with graphs or two variable equations. For example, if we look at Max's apples again, we may represent the total cost of apples bought as $y = 2x$. It is important to note that the $x$ here is different from the $x$ from our previous problem. Here, $y$ represents the total cost of apples and $x$ represents the number of apples being purchased. Depending on the value of $x$ (how many apples you buy), the value of $y$ (the total cost) changes. As you may have guessed, linear equations are called linear because when you graph them, they form straight lines. Here is the graph representation of our problem:</p>
+
+
+
+<p>Here, we have an $x$ axis (the horizontal black line) and a $y$ axis (the vertical black line). If we follow the red line, which is our relationship $y = 2x$, when we change the value of $x$, the value of $y$ also changes. When $x = 1$, $y=2$, and when $x=2$, $y=4$. This red line is thus a graphical representation of our relationship. We denote any point on this graph as an ordered pair like $(1, 2)$. Here, the $1$ represents the $x$ value and the $2$ represents the $y$ value. We call the number next to the $x$ the coefficient, and it denotes how many multiples of $x$ there are. When the coefficient of $y$ is $1$, the coefficient of $x$ may also be known as the slope of the line. The slope denotes how much $y$ changes when $x$ changes. Here, when $x$ changes by $1$, $y$ changes by $2$.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Graph the following equation on a piece of paper: $y = 2x + 1$</li>
+<li>Find the slope of the line represented by this equation: $2x + y = 4x + 3$</li>
+<li>Which equation has the greater slope: 
+<br>$4y = 8x + 28$
+<br>$y = 3x - 4$</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>Consult desmos</li>
+<li>Substract $2x$ from both sides to get $y = 2x + 3$. The coefficient of $y$ here is $1$, so the slope of this line is $\boxed{2}$.</li>
+<li>Notice that the slope of equation $b$ is $3$ because the $y$ coefficient is already $1$. Now, let's try to reduce the coefficient of $y$ to $1$ for equation $a$ by dividing both sides by $4$. After doing so, we reach $y = 2x + 7$. Thus, the slope here is $2$. This means that equation $\boxed{b}$ has the greater slope.</li>
+</ol>
+</div>
+
+<h2 id="multivariable-systems">Multivariable Systems</h2>
+
+<h2 id="what-is-a-system">What is a System/Intro to 2-Variable Systems</h2>
+
+<p>Sometimes, you'll be given a problem where you actually have $2$ unknown variables. Generally, you may call these variables $x$ and $y$ respectively, although you can really use any sort of symbol to represent them. If you have $2$ or more equations denoting the relationship between these $2$ variables, you will be able to deduce the value of these variables (or reach the conclusion that there are no such values that exist). For example, if we look at the equation $y = 4x +3$, there are infinite such pairs of values that satisfy the relationship. $y=7, x=1$ works, but so does $y=11, x=2$. Another way to think about this is that if we graph this, we get a line. Any point on this line satisfies the conditions, so there are infinite solutions. However, if we have a system such as,</p>
+$\begin{align}
+y &= 4x + 3\\
+y &= 2x + 5
+\end{align}$
+
+<p>we can see $2$ lines. There is only $1$ point where these $2$ lines overlap, and so that point is the point that satisfies both conditions.</p>
+
+<h2 id="substitution">Substitution</h2>
+
+<p>A popular technique when it comes to solving linear systems is known as substitution. If we look at our example above, we may see that $y$ is equal to $4x + 3$, but it is also equal to $2x + 5$. This means that $4x + 3$ is also equal to $2x + 5$. We have now effectively turned this into a $1$ variable equation that we can now solve. Whenever we're dealing with a system with multiple variables, we always want to simplify it down to a $1$ variable equation. This goes for both substitution (which we're now covering) and elimination (which we will cover after this).</p>
+
+<div class="exercise-section">
+<h4>Exercises - For all of the following, find values for $x$ and $y$ that satisfy both conditions.
+</h4>
+<ol>
+<li>$x + 3y = 4, 5y - 2x = -30$</li>
+<li>$2y = 3x - 7, y = 5x - 14$</li>
+<li>$x = 2y + 4, 2x = 4y + 9$</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>For our first equation, subtracts $3y$ from both sides to get $x = -3y + 4$. Now, substitute this into the second equation to get $5y - 2(-3y+4) = -30$. If we expand this equation, we get $5y + 6y - 8 = -30$, meaning $11y =  -22$. Thus, $y = -2$. Now, we simply plug this value of $y$ back into any of the equations. Let's choose the first equation. If we plug in $y= -2$, we get $x - 6 = 4$. This means that $x = 10$. Thus, our answer is $x = 10, y = -2$. In other words, $\boxed{10, -2}$.</li>
+<li>Going faster now, we already have $y$ by itself on equation $2$, so substitute that into equation $1$ to get $10x - 28 = 3x - 7$. Now, solve normally to get $7x = 21$ meaning $x = 3$. Plugging this into the second equation, we get $y = 1$. Thus, our answer is $\boxed{(3, 1)}$.</li>
+<li>If we substitute the first equation to the second, we get that $4y + 8 = 4y + 9$. This means that $8 = 9$. Obviously, this is not true, so we reach the conclusion that there are $\boxed{no solutions}$. Sometimes, systems have no solutions at all.</li>
+</ol></div>
+
+<h2 id="elimination">Elimination</h2>
+
+<p>The other predominant technique for solving systems is known as elimination. This involves turning the system into a $1$ variable equation by cancelling out one of the variables. For example, let's look at our previous system.</p>
+
+<p>$y = 4x + 3 $</p>
+<p>$y = 2x + 5$</p>
+
+<p>To use elimination, let's subtract the bottom equation from the top equation. To do this, we subtract the left side of the bottom equation from the left side of the top equation and the right side of the bottom equation from the right side of the top equation. Essentially, the sides just match up. Now, we have $0 = 2x - 2$. Now, this is just a $1$ variable equation that we can solve. The trick we just did is that because both $y$ coefficients were the same, we can just subtract one from the other to effectively remove $y$ from the systems altogether.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+<ol>
+<li>$y = 2x + 4, 2y = 5x + 20$</li>
+<li>$2x + 3y = -11, 4x - 3y = 23$</li>
+<li>$y = 2x + 9, 3y - 27 = 6x$</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>Multiply both sides of equation $1$ by $2$ to get $2y = 4x + 8$. Now, subtract this from equation $2$ to get $0 = x + 12$. This means that $x = -12$, and $y = -20$. In other words, the solution is $<span class="boxed">$(-12, -20)$</span></li>
+<li>If we add both of these equation together, we get $6x = 12$. Notice that the $y$s cancelled out. Now, we get $x = 2$ and $y = -5$. Thus, $\boxed{(2, -5)}$. Elimination doesn't always have to come in the form of subtraction. We can use addition as well.</li>
+<li>Multiplying both sides of equation $1$ by $3$ and subtracting the result from equation $2$, we get that $-27 = -27$. This is always true, meaning there are infinitely many solutions to this system.</li>
+</ol>
+</div>
+
+<h2 id="working-with-more-variables">Working with More Variables</h2>
+<p>All of these methods we went over apply to systems with more variables as well. Just make sure that the number of equations matches (or exceeds) the number of variables you are using. Otherwise, won't have just $1$ solution (usually). We urge you to try to make some problems of your own using $3$ or more variables and $3$ or more different equations, and solve them on your own.</p>
+<p>An equation cannot be used to express a statement of greater than or less than. For example, we can express that $8-2$ is equal to $6$ with an equation, but we can't say that $8-2$ is greater than $4$. How can we do that? We denote $>$ as greater than, and $<$ as less than (we can add a bar underneath to denote “or equal to”). Practically speaking, this is most useful when working with variables. For example, we might observe the sentence “5 less than twice a number is at most 25”. In this case, we would take the number to be a variable. The left hand side converts to $2x-5$ and the right side $25$. Then, at most means less than or equal to. So $2x-5 \le 25$. To solve this, we isolate the variable just like in an equation. In this instance, $2x \le 30$, or $x \le 15$. Instead of getting a finite amount of solutions, we instead get a range of possible values.</p>
+<p>There are two properties to remember as well. First, when comparing inequalities, if $a \le b$, and $b \le c$, $a$ is also less than or equal to $c$. However, if $a < b$, and $c < b$, that says nothing about $a$ and $b$. Secondly, if we consider negative numbers, $-6$ is less than $-5$. But if we multiply $-6$ and $-5$ by $-1$, we would see that $6$ is greater than $5$. So, when we multiply across the inequality with a negative value, we must flip the inequality.</p>
+<p>Consider the line created by a linear equation, for example, $y=x$. Graphically speaking, what would be greater than $y=x$? For this, we would look at the region where for every value of $x$, the values of $y$ in this region are always greater than the line. This is really just a fancy way of saying – to be greater than a line is to be above it. Similarly, to be less than a linear equation is to be below it. Finally, if we look to a system of inequalities, we will encounter more than one region. Then, the solution graphically becomes the intersection of those two regions.</p>
+
+<h2 id="am-gm">AM-GM</h2>
+<p>Take a semicircle, and construct an inscribed triangle along the diameter. Then the diameter of this semicircle is $a+b$ (as below). The radius is then $(a+b)/2$. Then, by similar triangles, we can find the height of the triangle to the diameter is the geometric mean of $a$ and $b$. Clearly, this height is less than the radius, no matter where the triangle is inscribed (unless it is the same as the radius, in which case $a=b$). Thus, we derive:</p>
+<p>$(a+b)/2 \ge \sqrt{ab}$ where equality comes if $a=b$.</p>
+<p>In fact, this inequality holds for further variables, such as including 3 variables or infinitely many.</p>
+
+<h3 id="am-gm-hm-qm">AM-GM-HM-QM</h3>
+<p>We know what a linear equation is, and similarly what exponents (like squaring does). We might be then provoked to wonder what happens when an equation has a higher degree. This is a polynomial, and especially when the highest degree is of power two, a quadratic equation. Quadratic equations most commonly fit the form $y=ax^2+bx+c$ (which may be seen as standard form), but can also be expressed in vertex form, $y=(x-h)^2+k$. Some key characteristics of quadratic equations is that they have a vertex as well as up to 2 zeros (or roots). Furthermore, they are symmetrical about the vertical line passing through the vertex. They often appear as a U shape.</p>
+<p>Completing the square refers to a situation in which you have $x^2+2ax$. This appears to be a perfect square that has had a constant subtracted from it. In particular, $(x+a)^2=x^2+2ax+a^2$. So we can see that $x^2+2ax=(x+a)^2-a^2$. This can be applied even in situations such as in the standard form, of $ax^2+bx+c$ (for a variety of values). In this instance, the key is to factor $a$ before completing the square. Then, divide $b$ by 2 to get the value of $a$. For example, take $x^2+3x$. To complete the square here, we take half the value of $b$, which is $3$. Then $x^2+3x=(x+3/2)^2-(3/2)^2$, or $(x+3/2)^2-9/4$.</p>
+<p>In the formula $ax^2+bx+c=0$, we wish to derive a perfect square and some excess constant remainder. Then, we can take the square root of the remainder and find solutions for $x$. In particular, we can note that for $(x+a)^2$, it results in $x^2+2ax+a^2$. Thus, we will see that upon factoring $a$ from $ax^2+bx+c$, we get $a(x^2+b/ax+c/a)$. Then, this could be factored as $a(x+b/2a)^2+\text{some remainder}$. When we expand our square, we get $ax^2+bx+b^2/4a+\text{some remainder} = x^2+bx+c$. Thus, our remainder must be $c- b^2/4a$ (or $(4ac-b^2)/4a$). Then, we know that $ax^2+bx+c=a(x+b/2a)^2+(4ac-b^2)/4a=0$. When we move the constant over and divide by $a$, we get $(x+b/2a)^2=(b^2-4ac)/4a^2$. Finally, taking the square root and moving the $b$ gets us $x = -b \pm \sqrt{b^2-4ac}/2a$.</p>
+<p>This shows us that we can get the solutions to any quadratic equation using this formula. Furthermore, it can tell us about the amount of solutions that exist. For example, we will call the term $(b^2-4ac)$ the discriminant of the equation. When this discriminant is positive, the solutions are 2 (since this value can be added or subtracted from $-b$). Then, if it is $0$ there is only one solution ($b/2a$). If it is negative, the square root cannot be taken and thus there is no solution.</p>
+<h4>Sum and Product of Roots</h4>
+<p>Factoring quadratics can also be computed through some useful tricks. In the most simple cases with quadratics with leading coefficient $1$, such as $x^2+7x+12$, any factoring will have $(x-a)(x-b)$ where $a$ and $b$ are the zeroes of the quadratic. Then, if we expanded this, we would get $x^2-(a+b)x+ab$. This should show us that $ab=12$, and $a+b=-7$. What this means is that the roots of the equation must multiply to the constant and add to the inverse of the second coefficient. See Vieta's formulas below for more information.</p>
+
+<h2 id="graphing-applications">Graphing Applications</h2>
+<p>In order to graph quadratic equations, we should be mindful of the key features. Primarily, we know that the vertex of a quadratic is at (h,k) when the equation is y=(x-h)^2+k. From there, the quadratic equation must be symmetric about x=h, and has to pass through the zeros. Once the vertex has been fixed, set x to be values such as h+1, h+2, and h+3, plotting the y values. Connecting the curve and then doing the same on the other side of the equation yields the parabola.</p>
+<p>Practically speaking, the vertex gives the key applications of a parabola. The vertex is either the maximum or minimum value of the parabola, depending on whether there is a negative before (x-h)^2.</p>
+<p>The difference of two squares, $x^2-y^2$ can be represented by (x-y)(x+y). If we expand the factored form, we get x^2-xy+xy-y^2 = x^2-y^2.</p>
+<p>This can be applied to variables and numbers.</p>
+<p>Similarly, the difference/sum of cubes can be factored thusly:</p>
+<p>$x^3+y^3=(x+y)(x^2-xy+y^2)$</p>
+<p>$x^3-y^3=(x-y)(x^2+xy+y^2)$</p>
+<p>$x^5+y^5 = (x+y)(x^4-x^3y+x^2y^2-xy^3+y^4)$</p>
+<h2 id="squares-binomial">Squares/Powers of Binomials</h2>
+<p>We observe in particular the squares of $(a+b)$ and $(a-b)$. These squares are commonly shown as $a^2+2ab+b^2$ and $a^2-2ab+b^2$ (by expanding). If we further extend to cubed powers, we can obtain $a^3+b^3+3ab(a+b)$ and $a^3-b^3-3ab(a-b)$.</p>
+<p>It may become tedious to expand higher power polynomials. Luckily, we have a shortcut. The reader may be familiar with Pascal's triangle, which gives the coefficients of the $n$th power of $(a+b)^n$. Similarly, the binomial theorem tells us that the coefficient of the term $x^{n-k}y^k$ is simply ${n \choose k}$. In total, the coefficients will be ${n \choose 0}, {n \choose 1}, {n \choose 2}, \dots, {n \choose n-2}, {n \choose n-1}, {n \choose n}$.</p>
+
+<h3 id="sfft">Simon's Favorite Factoring Trick (SFFT)</h3>
+<p>Simon's Favorite Factoring Trick (SFFT) is a factoring idea that was popularized on AoPS forums. The basis of the trick is to notice that $(x+1)(y+1) = xy+x+y+1$, which allows the factorization of expressions like $xy+x+y$ by adding constants.</p>
+<p>When you take the square root of something, you get the number that, when squared, produces your original value. Now, we know that the square of a real number is always positive, whether the original value is negative, zero, or positive. So, what do we do when we take the square root of a negative number then? The output obviously can't be a real number, so we create something known as imaginary numbers. When working with imaginary numbers, we define $\sqrt{-1}$ to be $i$. Thus, $\sqrt{-4} = 2i$, $\sqrt{-12} = 2\sqrt{3}i$, and so on. When dealing with fractions, we usually don't want imaginary numbers in our denominator. For example, to simplify $\frac{2}{i}$, we multiply top and bottom by $i$ to get $\frac{2i}{-1}$, aka $-2i$.</p>
+
+<h2 id="complex-numbers">Complex Numbers</h2>
+<p>Complex numbers are combinations of real numbers and imaginary numbers. For example, $3+4i$ is a complex number. When simplifying complex numbers in the denominator, you multiply top and bottom by something known as the conjugate. The conjugate of a complex number is the complex number with the sign of the imaginary part reversed. For example, the conjugate of $3+4i$ is $3-4i$. If we want to simplify $\frac{1}{2+\sqrt{3}i}$, simply multiply top and bottom by $2-\sqrt{3}i$. This will give you $2-\sqrt{3}i$ on top and $1$ on bottom, so your final answer is $2-\sqrt{3}i$.</p>
+
+
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>What's the square root of -36?</li>
+<li>What's the cube of $i$?</li>
+<li>Simplify $\frac{36}{-12i}$</li>
+<li>Simplify $\frac{1}{2+i}$</li>
+<li>What is $(4+4i)(4-4i)$</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>$\boxed{6i}$</li>
+<li>$\boxed{-i}$</li>
+<li>$\boxed{3i}$</li>
+<li>$\boxed{\frac{2-i}{5}}$</li>
+<li>$\boxed{16}$</li>
+</ol>
+</div>
+
+
+<div class="exercise-section">
+<h4>Exercises: State if each of the following is a function or not</h4>
+<ol>
+<li>Input: a word. Output: the number of letters in the word</li>
+<li>Input: a positive number. Output: the largest perfect cube less than that number</li>
+<li>Input: a number. Output: a perfect square less than that number</li>
+<li>Input: a family member (with 3 relatives). Output: any relative of the family member</li>
+<li>Determine the domain and range of the following functions</li>
+<li>$f(x) = 3x + 9$</li>
+<li>$f(x) = x^2 - 3$</li>
+<li>$f(x) = \frac{1}{x-2}$</li>
+<li>$f(x) = \frac{3x-7}{2x+4}$</li>
+<li>Let $f(x) = 4x + 5$ and $g(x) = 7x + 3$. Write an expression in terms of $x$ for $f(g(x))$.</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>$\boxed{\text{yes}}$, only 1 output per input.</li>
+<li>$\boxed{\text{yes}}$, there can't be 2 largest perfect cubes at the same time.</li>
+<li>$\boxed{\text{no}}$, there may be multiple perfect squares less than a number.</li>
+<li>$\boxed{\text{no}}$, there is more than one relative that the function may output</li>
+<li>Domain: $\boxed{\text{all real numbers}}$. Range: $\boxed{\text{all real numbers}}$.</li>
+<li>Domain: $\boxed{\text{all real numbers}}$. Range: $\boxed{\text{all real numbers greater than or equal to -3}}$</li>
+<li>Domain: $\boxed{\text{all real numbers except 2}}$. Range: $\boxed{\text{all real numbers except 0}}$.</li>
+<li>Domain: $\boxed{\text{all real numbers except -2}}$. Range: $\boxed{\text{all real numbers except } \frac{3}{2}}$.</li>
+<li>$g(x) = 7x + 3$, so let's just plug that into $f(x)$. $f(7x+3) = 4(7x+3) + 5 = <span class="boxed">$28x + 17$</span>$.</li>
+</ol>
+</div>
+
+<div class="exercise-section">
+<h4>Exercises: Determine the domain and range of the following functions</h4>
+<ol>
+<li>$f(x) = 3x + 9$</li>
+<li>$f(x) = x^2 - 3$</li>
+<li>$f(x) = \frac{1}{x-2}$</li>
+<li>$f(x) = \frac{3x-7}{2x+4}$</li>
+<li>Let $f(x) = 4x + 5$ and $g(x) = 7x + 3$. Write an expression in terms of $x$ for $f(g(x))$.</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>Domain: all real numbers. Range: all real numbers.</li>
+<li>Domain: all real numbers. Range: all real numbers greater than or equal to -3</li>
+<li>Domain: all real numbers except 2. Range: all real numbers except 0.</li>
+<li>Domain: all real numbers except -2. Range: all real numbers except $\frac{3}{2}$.</li>
+<li>$g(x) = 7x + 3$, so let's just plug that into $f(x)$. $f(7x+3) = 4(7x+3) + 5 = <span class="boxed">$28x + 17$</span>$.</li>
+</ol>
+</div>
+
+<h2 id="functions-and-inverses">Functions and Inverses</h2>
+<p>A function is a relationship between inputs and outputs. For every input, there is exactly one output.</p>
+<p> Sometimes, we want to be able to undo the effects of a function. For example, if we have a function $f^{-1}$ such that $f^{-1}(f(x)) = x$, then we would be able to return the input to its original value. This $f^{-1}$ is called the inverse function of $f$. As rules, functions $f$ and $g$ are inverses if and only if:</p>
+<p>$f(g(x)) = x$ for all $x$ in the domain of $g$</p>
+<p>$g(f(x)) = x$ for all $x$ in the domain of $f$</p>
+<p>Basically, if $f$ inverts $g$ then $g$ inverts $f$. So, how do we actually find these inverses? Well, when we graph a function, we're basically graphing $y = f(x)$. So, if we have $f(x) = 2x + 5$, we're going to be graphing $y = 2x + 5$. To find the inverse of this function, you swap the $x$ and $y$, and try to isolate $y$ once again. For example, we start with $y = 2x+5$, and swap the variables so that it becomes $x = 2y + 5$. Then, we isolate $y$ to get $y = \frac{x-5}{2}$. This is our inverse function. To confirm, let's plug in $2x+5$ into $\frac{x-5}{2}$. When we do so, we see that $\frac{2x+5-5}{2} = x$, so we know that our process has worked.</p>
+<p>The reasoning behind this process is that we want to go from our $y$ output back to our original $x$ input, so we swap the relationships of our $x$ and $y$. When you look at a graph, you'll be able to tell when a function is invertible if it passes the horizontal line test. Basically, if you are able to draw a horizontal line through the graph such that it intersects $2$ or more points, the function is not invertible. This is because since there are multiple inputs that generate the same output, the inverse would theoretically have multiple outputs for the same input. Thus, there cannot exist an inverse function for such a graph.</p>
+
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Let $f(x) = 5x - 4$ and $g(x) = \frac{x+4}{5}$.</li>
+<li>What is $f(g(3))$?</li>
+<li>What is $g(f(39))$?</li>
+<li>Does there exist a number $x$ such that $f(g(x))$ or $g(f(x))$ does not equal $x$?</li>
+<li>What is the inverse of the function $f(x) = \frac{3x-3}{4x+9}$?</li>
+<li>Let $f(x) = x^4$. Does $f$ have an inverse?</li>
+<li>Let $g(x) = g^4$ tand let the domain of $g$ be all nonnegative reals. Does $g$ have an inverse?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>3</li>
+<li>39</li>
+<li>No, they're inverses</li>
+<li>Let $y = \frac{3x-3}{4x+9}$. Now, flip the variables to get $x = \frac{3y-3}{4y+9}$. Now, multiply both sides of the equation by $4y+9$ to get $4xy+9x = 3y-3$. Rearrange to get $4xy-3y = -9x -3$. This may be rewritten as $y(4x-3) = -9x-3$. Now, divide both sides by $4x-3$ to get $y = \frac{-9x-3}{4x-3}$ or $<span class="boxed">$-\frac{9x+3$</span>{4x-3}}$.</li>
+<li>No, it fails the horizontal line test.</li>
+<li>Yes, it passes the horizontal line test.</li>
+</ol>
+</div>
+
+<p>We've gone over graphing functions a bit already, so now we want to focus on how graphs change when certain things</p>
+<p>Radicals are fractional exponents. For example, $9^{\frac{3}{4}} = \sqrt[\leftroot{-2}\uproot{2}4]{9^3}$. The formula for a radical function is usually defined as $f(x) = \sqrt[\leftroot{-2}\uproot{2}n]{g(x)}$, where ${f(x)}^n = g(x)$. The most common example of the radical is the square root, or $f(x) = \sqrt[\leftroot{-2}\uproot{2}2]{g(x)}$. Therefore, if $g(x) = 9$, $f(x) = 3$ because $3^2 = 9$. The same logic can be appped to larger roots, with the cube root of 27 being 3, and the fourth root of 81 also being 3.</p>
+<h2 id="properties-of-radicals">Properties of Radicals</h2>
+<p>In the case of an even root, the number under the radical must be nonnegative to return a real result. For example, $\sqrt[\leftroot{-2}\uproot{2}2]{-2}$ is a non-real number, whereas $\sqrt[\leftroot{-2}\uproot{2}2]{2}$ is a real number.</p>
+<h3>Odd Roots (first roots, cube roots):</h3>
+<p>The expression under the radical can be any real number. For example, $\sqrt[\leftroot{-2}\uproot{2}3]{-8} = -2$, while $\sqrt[\leftroot{-2}\uproot{2}3]{8} = 2$.</p>
+<h3>Multiplication:</h3>
+<p>Square roots cannot be added, for example, $\sqrt{2} + \sqrt{2}$ is not equal to $\sqrt{4}$. However, $\sqrt{2} * \sqrt{2} = \sqrt{4}$. This allows us to simplify radical expressions. For example, $\sqrt{50} = \sqrt{25} * \sqrt{2}$. Then, $\sqrt{25} = 5$, which means $\sqrt{50} = 5\sqrt{2}$!</p>
+<h3>Solving Procedure:</h3>
+<p>The first step to solving a radical equation is eliminating the radical. This can be completed by raising both sides of the equation to the power of $n$, essentially going from $\sqrt{A} = B$ to $A = B^2$.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Solve the equation $\sqrt{x+81} = 15$ and find the sum of all possible values of $x$.</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>Squaring both sides, we have $x+81 = 225$. Therefore, $x = 144$</li>
+</ol>
+</div>
+
+<h2 id="piecewise-absolute-value">Piecewise and Absolute Value Functions</h2>
+<p>A piecewise function is usually depicted as:</p>
+<p>\( f(x) = \begin{cases} -x & \text{if } x \le 0 \\ x & \text{if } x \ge 0 \end{cases} \)</p>
+<p>Given this, we can think of a piecewise function as a function made from the pieces of other functions. For example, the absolute value function is a piecewise function. When $x>0$, the absolute value of $x = x$, but when $x<0$, the absolute value of $x = -x$.</p>
+<p>Evaluating piecewise functions involves 2 steps:</p>
+<p>- Identify the interval or condition met by the current x-coordinate.</p>
+<p>- Evaluate the corresponding function.</p>
+<p>It's important to treat each individual "piece" as a separate function over a separate domain- not all piecewise functions will be continuous, so it's important to consider each individual "piece" as an individual function.</p>
+<p>The Absolute value of a number is defined as the distance it is away from 0, regardless of direction. For example, $|-4| = 4 = |4|$. It has many uses in mathematics, such as in distance, inequapties, and solving equations.</p>
+<p>Three important identities of the Absolute Value function occur when we represent the absolute value as a piecewise function:</p>
+<p>$f(x) = \begin{cases} -x & \text{if } x \le 0 \\ x & \text{if } x \ge 0 \end{cases}$</p>
+<p>Rules:</p>
+<p>1. The absolute value can never be negative, $|f(x)|>0$ for all $f(x)$.</p>
+<p>2. $|x| = x$ for $x \ge 0$</p>
+<p>3. $|x| = -x$ for $x \le 0$</p>
+<p>Now that we know some basic principles of absolute value, let's consider its usage in distance and apply some transformations. In terms of distance, we have that $|a-b|=c$ means that $a$ and $b$ are $c$ units apart on the number line, regardless of units. This offers a simple way to solve for absolute value, because we can express this as $b = a \pm c$.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+<ol>
+<li>Write a piecewise function composed of 2 equations that represents the absolute value function.</li>
+<li>What is the sum of all possible values of $x$ if $|3x-21| = 102$.</li>
+<li>Evaluate the sum of the least positive integer and the greatest negative integer that satisfies $|x+2| \ge 5$.</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>\( f(x) = \begin{cases} -x & \text{if } x \le 0 \\ x & \text{if } x \ge 0 \end{cases} \)</li>
+<li>This gives us that the distance between $3x$ and $21$ is $102$. This means that $3x = 21 \pm 102$. Therefore, this gives $x = 7 \pm 34$ when dividing by $3$ and therefore $x = 41$ and $x = -27$. In terms of solving absolute value inequalities, we express $|f(x)|<a$ as $-a < f(x) < a$ and $|f(x)| > a$ as $f(x) < -a$ or $f(x) > a$. Then, we remove the function applied on $x$ by applying the inverse to all portions of the inequality, and we have a domain of $x$ for which the inequality is true.</li>
+<li>This gives us the second case, so we express it as ($x+2 < -5$ or $x+2 > 5$). Subtracting 2 from all sides, we get ($x \le -7$ or $x > 3$). Therefore, $3 - 7 = -4$.</li>
+</ol>
+</div>
+
+<h2 id = "floor-ceiling-sawtooth">Floor, Ceiling, and Sawtooth Function</h2>
+<p>The Floor and Ceiling Functions are examples of step functions. The floor function is known as the greatest integer function, while the ceiling function is known as the least integer function. They can be used for integer problem solving and approximation.</p>
+<p>The floor of $x$ is the greatest integer less than or equal to $x$. For example, $\lfloor 2.5 \rfloor = 2$, while $\lfloor 2.9 \rfloor$ is also 2. Because of this, the function $f(x) = \lfloor x \rfloor$ resembles a staircase.</p>
+<p>Similarly, the ceiling function of $x$ is defined as the smallest integer that is greater than or equal to $x$. For example, $\lceil 2.9 \rceil = \lceil 3 \rceil = \lceil 2.1 \rceil = 3$.</p>
+<p>Lastly, the sawtooth function is defined as the fractional portion of a number $x$, and is defined as ${x} = x - \lfloor x \rfloor$.</p>
+<p>A rational function is the ratio of polynomials, or $\frac{p(x)}{q(x)}$, with $p(x)$ and $q(x)$ being polynomial functions and $q(x) \neq 0$. Rational functions have important features, such as domain and behavior at zeros.</p>
+<p>The domain of a rational function includes all numbers except for when $q(x) = 0$. When this does occur, the graph has either a vertical asymptote or a hole. A vertical asymptote occurs when the denominator approaches zero while the numerator doesn't approach zero. However, a hole occurs when both the denominator and numerator approach zero. For example, $\frac{x-3}{x-3}$ has a hole at $x=3$, while $\frac{x-5}{x-3}$ has a vertical asymptote at $x = 3$. To find holes and asymptotes of a rational function, the first step is to factor both portions of the fraction. All zeroes of the denominator are either vertical asymptotes or holes, and if a zero in the denominator is repeated in the numerator with both raised to the same power, a hole exists. Lastly, the graph crosses the x-axis when the numerator is equal to zero and the denominator is non-zero.</p>
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+<ol>
+<li>Find all holes, vertical asymptotes, and zeros of the function $\frac{(x^2-3x+2)(x-5)}{(x-5)(x-7)}$.</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>Factoring the numerator, we get $\frac{(x-2)(x-1)(x-5)}{(x-5)(x-7)}$. Since $x-5$ is in both the numerator and the denominator, there is a hole at $x=5$. Then, no other terms are repeated, so there are zeroes at $x=2, x=1$, and vertical asymptotes at $x=5, x=7$. The horizontal asymptote of the rational function is the number the function approaches as it approaches infinity and negative infinity. This can be found by multiplying both the numerator and the denominator by $\frac{1}{x^n}$, where $n$ is the greatest degree in the entire rational function. For example, with the function $f(x) = \frac{5x^7+9x^3+x^2+5}{2x^7 + 9x^5 + x + 1}$, we multiply both the numerator and denominator by $\frac{1}{x^7}$. Since all other terms are of lower tier, and $\frac{1}{\inf} = 0$, we essentially end up with $y = \frac{5}{2}$ as our horizontal asymptote. In the case of the greatest exponent being different for both the numerator and denominator- when the denominator is greater, the horizontal asymptote is just zero, but when the numerator is greater, the horizontal asymptote is a function rather than a number. The Multiplicity of a zero or asymptote is defined as the value of $n$ in $(x-a)^n$. When $n$ is odd, it is defined as a pass-through asymptote or zero, and when $n$ is even, it is defined as a bounce asymptote or zero. For example, in the graph below, x=-5 is a pass-through zero, x=2 is a bounce zero, x=3 is a bounce asymptote, and x=5 is a pass through asymptote. A pass-through is when the sign (+/-) changes through the zero or asymptote, and a bounce is when the sign remains the same.</li>
+</ol>
+</div>
+
+<h2 id = polynomials>Polynomials</h2>
+<p>What is a polynomial? A polynomial is an expression that involving a sum of powers in one or more variables, with each being multiplied by coefficients. The polynomial is in the form $P(x) = a_n x^n + a_{n-1} x^{n-1} + … + a_2 x^2 + a_1 x + a_0$, where $x$ is the variable, $a$ represents the coefficients, and $n$ is the degree of the polynomial, or the highest power of $x$ in the polynomial.</p>
+<h3>Properties of Polynomials</h3>
+<p>Degree: The degree of a polynomial, or the highest power of $x$, defines the type of polynomial. For example, a polynomial of degree 1 is a linear polynomial, while a polynomial of degree 3 is cubic.</p>
+<p>Leading Coefficient: The leading coefficient is the coefficient of the term with the highest power. For example, in $5x^4 + 3x^2+1$, the leading coefficient would be $5$.</p>
+<p>Constant term: the constant of the polynomial is the term without a variable, and taking our polynomial $5x^4 + 3x^2+1$, the constant would be $1$.</p>
+<p>Roots or zeros: These are where the polynomial is equal to $0$ and are usually defined as the solutions to a polynomial expression.</p>
+<p>Rules: A polynomial cannot have non-integer or variable exponents, variables in the denominator, negative exponents, or trigonometric functions.</p>
+<p>We can add, subtract, multiply, and divide polynomials using several methods.</p>
+<p>We complete this by combining like terms. For example, $5x^6 - 3x^5$ is not equal to $2x$, but $5x^6-3x^6 = 2x^6$. By combining the terms that have the same variable raised to the same power, we can accurately add and subtract polynomial expressions.</p>
+
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>What is the value of $(3x^2 + 5x - 7) - (2x^2+5x+19)$?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>This is equal to $3x^2-2x^2 + 5x - 5x -7 - 19 = x^2 -26$.</li>
+</ol>
+</div>
+
+<h3>Multiplication</h3>
+<p>To multiply two terms together, $ax^n$ and $bx^m$, the result would be $(a*b)x^{n+m}$. If we were to take $3x^5$ and $2x^3$ as an example, the result would be $(3*2)x^{5+3} = 6x^8$. We can use this to multiply expressions together. To multiply two expressions together, we multiply every term in one parenthesis with every term in the other parenthesis, and then add them together.</p>
+
+
+<div class="exercise-section">
+<h4>Exercises</h4>
+<ol>
+<li>Calculate $(3x^2+x+5)(2x^2+3x+1)$</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>$\boxed{6x^4 + 11x^3 + 16x^2 + 16x + 5}$.</li>
+</ol>
+</div>
+
+<h2 id="polynomial-long-division">Polynomial Long Division</h2>
+
+<p>We can follow a process containing a couple of steps:</p>
+
+<p>1. Arrange the polynomials from highest degree to least degree</p>
+<p>2. Divide the leading terms to get the first term of your quotient</p>
+<p>3. Multiply the entire divisor by the term achieved in part 2 and subtract it like long division</p>
+<p>4. Repeat steps 2 and 3 until the degree of the remaining polynomial is less than that of the divisor</p>
+<p>5. Combine the quotient with the remainder</p>
+
+</div>
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Divide $x^3 + 7x^2 + 3x + 2$ by $(x+1)$</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>Following the steps, we first multiply by $x^2$, and get $\boxed{x^2 + 6x - 3 + \frac{5}{x+1}}$</li>
+</ol>
+</div>
+
+<h4 id="vietas-formula">Vieta's Formula</h4>
+
+<p>Many problems deal with finding the roots of a polynomial, and that's where Vieta's Formula comes into play. Vieta's formula allows us to find the sum and product of all of the roots of the polynomial using the ratios between certain coefficients.</p>
+
+<p>Given the polynomial $P(x) = a_n x^n + a_{n-1} x^{n-1} + ... + a_2 x^2 + a_1 x + a_0$, and roots $r_{1}, r_{2}, … , r_{n}$, we have that</p>
+
+<p>$r_{1} + r_{2} + … r_{n} = \frac{-a_{n-1}}{a_{n}}$</p>
+<p>$r_{1}r_{2} + r_{2}r_{3} + … + r_{n-1}r_{n} = \frac{a_{n-2}}{a_{n}}$</p>
+<p>$r_{1}r_{2}r_{3}...r_{n} = (-1)^n *(\frac{a_{0}}{a_{n}})$</p>
+
+</div>
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>The polynomial $x^2 + bx + c$ has 2 roots, which are each double the roots of the equation $x^2+7x+6$. What is the value of $b+c$?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>We know the roots of $x^2 - 7x + 6$ are $1$ and $6$. Therefore, for a quadratic to have roots of 2 and 12, we need $b=2+12$ and $c = 2*12$. This gives us $\boxed{38}$.</li>
+</ol>
+</div>
+
+<h2 id="sequences-series">Sequences & Series</h2>
+
+<h4 id="arithmetic-sequences-series">Arithmetic Sequences/Series</h4>
+
+<p>An Arithmetic Sequence consists of terms in a progression in which they all have a common difference. For example, 1, 2, 3, 4, is an arithmetic sequence with a common difference $1$ and the starting term $1$. An arithmetic sequence has two important terms: the initial term and the common difference.</p>
+
+<p>With this, we can create two formulas for the arithmetic sequence: one based on position, difference, and initial term (explicit formula), and one that uses the previous term to create a new term (recursive formula).</p>
+
+<p>Our recursive formula can be written as current term = previous term + common difference, or $a_{n} = a_{n-1} + d$, with $d$ as the common difference and $a_{n}$ being the $n$th term of the sequence. Similarly, our explicit formula can be written as $a_{n} = a_{1} + d(n-1)$. The recursive formula serves more as the definition of an arithmetic progression, and the explicit formula allows us to find the $n$th term of a sequence.</p>
+
+<h5 id="arithmetic-sums">Arithmetic Sums</h5>
+
+<p>With this information, is it possible to find the sums of arithmetic sequences? The arithmetic sum formula goes $S_{n} = \frac{n}{2} * (a_{1} + a_{n})$. However, this can be expressed differently, such as $S_{n} = \frac{n}{2} * (2a + (n-1)d)$.</p>
+
+<h5 id="practice-problems-arithmetic">Practice Problems</h5>
+
+</div>
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>What is the sum of the first $100$ positive integers?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>We use the formula, $50*(101) = \boxed{5050}$.</li>
+</ol>
+</div>
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>What is the sum of the first 22 terms of the sequence $3, 5, 7…$?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>We can express the 22nd term as $3 + (21)2 = 45$. Therefore, we have $11 * 48 = \boxed{528}$.</li>
+</ol>
+</div>
+
+<h4 id="geometric-sequences-series">Geometric Sequences/Series</h4>
+
+<p>A geometric sequence consists of a progression in which each term has a common ratio with the previous term. In essence, it is an arithmetic progression with multiplication rather than addition. Similar to an arithmetic progression, the two important terms of the geometric sequence are the initial term and the common ratio.</p>
+
+<p>The recursive formula for the geometric series is defined as $a_{n} = a_{n-1} * r$, if $r$ is the common ratio. Then, the explicit formula is defined as $a_{n} = a_{0} * r^{n-1}$. This allows us to find the $n$th term of the progression with only the initial term and common difference.</p>
+
+<h5 id="geometric-sums">Geometric Sums</h5>
+
+<p>There are two types of geometric sums- those for infinite and finite series. In terms of an infinite series, the sum will converge to a number only when $|r| \le 1$, or $-1 \le r \le 1$. When these conditions are met, the formula for the infinite series is $S_{n} = \boxed{\frac{a}{1-r}}$.</p>
+
+<p>In terms of the finite series, the formula is $S_{n} = a* (\frac{r^n-1}{r-1})$ for $r \neq 1$.</p>
+
+<h5 id="practice-problems-geometric">Practice Problems</h5>
+
+
+</div>
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>What is the sum of all possible values of $2 * (\frac{1}{3})^n$ such that $n$ is an integer greater than or equal to 0?</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>We use our formula, $\frac{a}{1-r}$, which gives $\frac{2}{\frac{2}{3}} = \boxed{3}$.</li>
+</ol>
+</div>
+
+<h2 id="telescoping">Telescoping</h2>
+
+<p>A telescoping series is a series in which most terms cancel out when the series is summed. Take the sum of all $\frac{1}{n}-\frac{1}{n+1}$ for all positive $n$. Given this sequence, its telescoping nature is easier to see when we write the first few terms of the series. We get $\frac{1}{1} - \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + \frac{1}{3} … - \frac{1}{n}$. From this, we can see that all terms other than $1$ and $\frac{1}{n}$ cancel out, meaning the sum of the first $n$ terms of this sequence is $1-\frac{1}{n}$.</p>
+
+<p>Telescoping sequences typically involve reasoning in order to find a pattern in between terms, but the pattern allows for simplification of incredibly complex sequences.</p>
+
+<h5 id="practice-problems-telescoping">Practice Problems</h5>
+
+
+</div>
+<div class="exercise-section">
+<h4>Exercises</h4>
+
+<ol>
+<li>Evaluate the sum $\frac{1}{n(n+1)}$ for all positive integers $n$.</li>
+</ol>
+</div>
+<div class="solution-section">
+<h4>Solutions</h4>
+<ol>
+<li>This can be expressed as $\frac{n+1}{n(n+1)} - \frac{n}{n(n+1)}$ or $\frac{1}{n} - \frac{1}{n+1}$. Therefore, we get $1 - \frac{1}{2} + \frac{1}{2} - … - \frac{1}{(n+1)}$. Since $\frac{1}{\inf} = 0$, we get that the sum is $\boxed{1}$.</li>
+</ol>
+</div>
+
+</div>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%- include('../partials/meta'); %>
+
+  <title>Mathematics Textbook | JHMC</title>
+  <meta name="description" content="Comprehensive mathematics textbook for Junior High Math Contest preparation.">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="canonical" href="https://imsajhmc.uc.r.appspot.com/textbook">
+
+  <!-- Custom fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link href="/css/one-page-wonder.css" rel="stylesheet">
+  
+  <style>
+    .chapter-card {
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 20px;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    
+    .chapter-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    
+    .chapter-card.coming-soon {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    .chapter-card.coming-soon:hover {
+      transform: none;
+      box-shadow: none;
+    }
+    
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    
+    .chapter-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0;
+    }
+    
+    a.chapter-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    
+    a.chapter-link:hover {
+      text-decoration: none;
+      color: #007bff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <%- include('../partials/navbar') %>
+
+  <!-- Header -->
+  <header class="masthead2 text-center imsa-foreground">
+    <div class="masthead-content">
+      <div class="container">
+        <h1 class="masthead-heading mb-0">Mathematics Textbook</h1>
+        <br />
+        <h2>Master Competition Math Fundamentals</h2>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="p-5 text-center">
+        <h2 class="display-4">Choose a Topic</h2>
+        <p class="lead">Click on any topic below to start learning</p>
+      </div>
+      
+      <div class="chapter-grid">
+        <% chapters.forEach(function(chapter) { %>
+          <% if (chapter.status !== 'coming-soon') { %>
+            <a href="/textbook/<%= chapter.id %>" class="chapter-link">
+              <div class="card chapter-card">
+                <div class="card-body text-center">
+                  <h3 class="chapter-title"><%= chapter.title %></h3>
+                  <p class="text-muted"><%= chapter.description %></p>
+                </div>
+              </div>
+            </a>
+          <% } else { %>
+            <div class="card chapter-card coming-soon">
+              <div class="card-body text-center">
+                <h3 class="chapter-title text-muted"><%= chapter.title %></h3>
+                <small class="text-muted">Coming Soon</small>
+              </div>
+            </div>
+          <% } %>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <div id="bottom-spacer"></div>
+
+  <!-- Footer -->
+  <%- include('../partials/footer') %>
+  
+</body>
+
+</html>
